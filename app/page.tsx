@@ -4,7 +4,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Welcome to My Portfolio
+            Welcome to My Website
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             I&apos;m a passionate developer creating innovative solutions through code.

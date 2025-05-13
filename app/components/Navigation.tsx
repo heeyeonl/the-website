@@ -19,13 +19,13 @@ export default function Navigation() {
           </Link>
           <div className="flex space-x-8">
             <Link href="/projects" className={`${isActive('/projects')} transition-colors duration-200`}>
-              Projects
+              projects
             </Link>
             <Link href="/games" className={`${isActive('/games')} transition-colors duration-200`}>
-              Games
+              games
             </Link>
             <Link href="/about" className={`${isActive('/about')} transition-colors duration-200`}>
-              About
+              about
             </Link>
           </div>
         </div>
