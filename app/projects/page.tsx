@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Code2, Folder, Plus } from 'lucide-react';
+import { Code2, Folder, Plus, Store } from 'lucide-react';
 
 interface ProjectCard {
   title: string;
@@ -9,6 +9,7 @@ interface ProjectCard {
   href: string;
   icon: React.ReactNode;
   status: 'available' | 'coming-soon';
+  statusColor?: string;
   tags: string[];
 }
 
@@ -28,6 +29,15 @@ const projects: ProjectCard[] = [
     icon: <Code2 size={32} />,
     status: 'available',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS']
+  },
+  {
+    title: "Knitting",
+    description: "I have passion in knitting and I sell my handmade products on Etsy.",
+    href: "/projects/knitting",
+    icon: <Store size={32} />,
+    status: 'available',
+    statusColor: 'text-orange-500',
+    tags: ['Business', 'Hobby', 'Craft']
   },
   {
     title: "Coming Soon",
@@ -58,7 +68,7 @@ export default function Projects() {
             }`}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className={`${project.status === 'available' ? 'text-blue-500' : 'text-gray-400'}`}>
+              <div className={`${project.status === 'available' ? `${project.statusColor ? project.statusColor : 'text-blue-500'}` : 'text-gray-400'}`}>
                 {project.icon}
               </div>
               <h2 className="text-xl font-semibold">{project.title}</h2>
@@ -81,7 +91,7 @@ export default function Projects() {
                 href={project.href}
                 className="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
               >
-                View Details
+                Learn More
               </Link>
             ) : (
               <span className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-md cursor-not-allowed">

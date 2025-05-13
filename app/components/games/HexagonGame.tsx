@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Info, X } from 'lucide-react';
+import { Github, Info, X } from 'lucide-react';
 const ALPHABET = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 const MESSAGES = {
   'start': 'Click any cell to start the game!',
@@ -349,6 +349,19 @@ export default function HexagonGame() {
             />
           </div>
         </div>
+      </div>
+      <div className="flex justify-center gap-6">
+        <a 
+          href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group inline-block text-gray-700 hover:text-gray-800 transition-colors"
+        >
+          <Github size={32} />
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            See code here
+          </span>
+        </a>
       </div>
     </div>
   );
