@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Sansita } from "next/font/google";
+import { avenir } from './fonts';
 import "./globals.css";
 import Navigation from "./components/Navigation";
 
-const inter = Inter({ subsets: ["latin"] });
-const sansita = Sansita({ 
-  weight: '400',
-  subsets: ["latin"],
-  variable: '--font-sansita',
-});
-
 export const metadata: Metadata = {
-  title: "heeyeonl",
-  description: "Welcome to my personal portfolio website showcasing my projects, games, and more.",
+  title: "Heeyeon Lee",
+  description: "Welcome to my website!",
 };
 
 export default function RootLayout({
@@ -22,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} ${sansita.variable}`}>
+    <html lang="en" className={`${avenir.variable}`}>
+      <body className="font-avenir bg-[#faf6f1]">
         <Navigation />
         <main className="pt-16">
           {children}
