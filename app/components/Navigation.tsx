@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FileText } from 'lucide-react';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -17,7 +18,7 @@ export default function Navigation() {
           <Link href="/" className="text-xl font-bold text-gray-800 hover:text-blue-500">
             heeyeonl
           </Link>
-          <div className="flex space-x-8">
+          <div className="flex space-x-8 items-center">
             <Link href="/projects" className={`${isActive('/projects')} transition-colors duration-200`}>
               projects
             </Link>
@@ -27,6 +28,13 @@ export default function Navigation() {
             <Link href="/about" className={`${isActive('/about')} transition-colors duration-200`}>
               about
             </Link>
+            <a
+              href="/HeeyeonLee_Resume.pdf"
+              download
+              className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+            >
+              resume
+            </a>
           </div>
         </div>
       </div>
