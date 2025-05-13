@@ -205,7 +205,7 @@ export default function HexagonGame() {
 
   return (
     <div className="w-full">
-      <div className="flex items-center mb-6">
+      <div className="flex items-center mb-6 relative">
         <h1 className="text-4xl font-sansita">Hexagon</h1>
         {!showDescription && (
           <Info
@@ -214,6 +214,19 @@ export default function HexagonGame() {
             onClick={() => setShowDescription(true)}
           />
         )}
+        <div className="absolute top-0 right-0">
+          <a 
+            href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group inline-block text-gray-700 hover:text-gray-800 transition-colors"
+          >
+            <Github size={32} />
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              See code here
+            </span>
+          </a>
+        </div>
       </div>
       
       <div className={`
@@ -351,19 +364,6 @@ export default function HexagonGame() {
             />
           </div>
         </div>
-      </div>
-      <div className="flex justify-center gap-6 mt-6">
-        <a 
-          href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative group inline-block text-gray-700 hover:text-gray-800 transition-colors"
-        >
-          <Github size={32} />
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            See code here
-          </span>
-        </a>
       </div>
     </div>
   );
