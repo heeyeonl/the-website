@@ -7,7 +7,17 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fade: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' }
+        }
+      },
+      animation: {
+        fade: 'fade 5s infinite'
+      }
+    },
   },
   plugins: [],
 };
