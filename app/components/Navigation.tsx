@@ -56,7 +56,7 @@ export default function Navigation() {
           ${isMenuOpen ? 'max-h-48 py-2' : 'max-h-0'} 
           overflow-hidden transition-all duration-300 ease-in-out
         `}>
-          <div className="flex flex-col space-y-4 pb-3">
+          <div className="flex flex-col space-y-4 pb-3 items-end">
             <Link 
               href="/projects" 
               className={`${isActive('/projects')} transition-colors duration-200`}
