@@ -13,7 +13,7 @@ const FEATURED_PRODUCTS = [
   {
     title: "Stitch Markers",
     image: "/products/stitch-markers.jpg",
-    href: "https://www.etsy.com/listing/1867109221/ink-blue-butterfly-stitch-markers-set-of?ref=shop_home_active_1&sca=1&sts=1&logging_key=70854638c4e8c47cac3076a2301b24e1794d9e27%3A1867109221",
+    href: "https://www.etsy.com/shop/HeeyeonKnits?ref=shop-header-name&listing_id=1867109221&from_page=listing&section_id=52770283",
   },
   {
     title: "Handmade Doily Coasters",
@@ -26,8 +26,7 @@ export default function EtsyStore() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="flex items-center gap-4 mb-8">
-        <Store size={40} className="text-orange-500" />
-        <h1 className="text-3xl font-bold">HeeyeonKnits</h1>
+        <h1 className="text-4xl font-sansita">HeeyeonKnits</h1>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -36,7 +35,7 @@ export default function EtsyStore() {
           Follow me on Instagram to see my latest creations and works in progress.
         </p>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-4">
           <a
             href="https://www.instagram.com/heeyeon.knits/"
             target="_blank"
