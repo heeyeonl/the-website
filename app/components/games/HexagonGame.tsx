@@ -262,23 +262,23 @@ export default function HexagonGame() {
                 <div
                   key={cell.char}
                   className={`
-                    float-left -mb-[26px] ml-[3px] cursor-pointer group
+                    float-left -mb-[13px] sm:-mb-[20px] md:-mb-[26px] ml-[2px] sm:ml-[3px] cursor-pointer group
                     ${showNumbers ? 'cursor-not-allowed' : ''}
                   `}
                   onClick={() => !showNumbers && onSelect(cell)}
                 >
                   <div className={`
-                    w-0 border-l-[52px] border-r-[52px] border-transparent
+                    w-0 border-l-[26px] border-r-[26px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
                     ${showNumbers 
-                      ? 'border-b-[30px] border-b-blue-500' 
+                      ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-blue-500' 
                       : isSelectedCell
-                        ? 'border-b-[30px] border-b-red-500 group-hover:border-b-red-600'
-                        : 'border-b-[30px] border-b-white group-hover:border-b-blue-500'
+                        ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-red-500 group-hover:border-b-red-600'
+                        : 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-white group-hover:border-b-blue-500'
                     }
                     transition-colors
                   `} />
                   <div className={`
-                    flex items-center justify-center w-[104px] h-[60px] text-[38px]
+                    flex items-center justify-center w-[52px] sm:w-[78px] md:w-[104px] h-[30px] sm:h-[45px] md:h-[60px] text-[19px] sm:text-[29px] md:text-[38px]
                     ${showNumbers
                       ? 'bg-blue-500 text-white'
                       : isSelectedCell
@@ -290,12 +290,12 @@ export default function HexagonGame() {
                     {showNumbers ? cell.num : cell.char}
                   </div>
                   <div className={`
-                    w-0 border-l-[52px] border-r-[52px] border-transparent
+                    w-0 border-l-[26px] border-r-[26px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
                     ${showNumbers
-                      ? 'border-t-[30px] border-t-blue-500'
+                      ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-blue-500'
                       : isSelectedCell
-                        ? 'border-t-[30px] border-t-red-500 group-hover:border-t-red-600'
-                        : 'border-t-[30px] border-t-white group-hover:border-t-blue-500'
+                        ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-red-500 group-hover:border-t-red-600'
+                        : 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-white group-hover:border-t-blue-500'
                     }
                     transition-colors
                   `} />
