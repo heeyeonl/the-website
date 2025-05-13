@@ -205,35 +205,37 @@ export default function HexagonGame() {
 
   return (
     <div className="w-full">
-      <div className="flex items-center gap-2">
-        <h1 className="text-2xl font-bold">Hexagon</h1>
+      <div className="flex items-center mb-6">
+        <h1 className="text-4xl font-sansita">Hexagon</h1>
         {!showDescription && (
           <Info
             size={28}
-            className="mb-6 p-1 cursor-pointer hover:text-red-600 transition-colors"
+            className="ml-2 p-1 cursor-pointer hover:text-blue-600 transition-colors"
             onClick={() => setShowDescription(true)}
           />
         )}
       </div>
       
       <div className={`
-        ${showDescription ? 'opacity-100 h-auto mb-9 p-4' : 'h-0 opacity-0 overflow-hidden'}
-        flex flex-col bg-white rounded-lg shadow-md transition-all duration-500
+        ${showDescription ? 'opacity-100 h-auto mb-9' : 'h-0 opacity-0 overflow-hidden'}
+        relative bg-white rounded-lg shadow-md transition-all duration-500
       `}>
-        <div className="text-right -mb-6 md:mb-0">
+        <div className="absolute top-2 right-2">
           <X
             size={28}
-            className="p-1 cursor-pointer hover:text-red-600 transition-colors"
+            className="p-1 cursor-pointer hover:text-blue-600 transition-colors"
             onClick={() => setShowDescription(false)}
           />
         </div>
-        <ul className="space-y-2">
-          <li>This game is from Korean reality show called <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">The Devil&apos;s Plan</a>.</li>
-          <li>There are 19 random numbers from 1 to 9, and after 60 seconds, the numbers will be replaced with an alphabet character in order.</li>
-          <li>You will be given a target number, and you must remember which 3 combinations of numbers will make the target number.</li>
-          <li>You can select and deselect the number, and once 3 numbers are selected, you will gain 1 point if it is correct, but you will lose 1 point if it is incorrect.</li>
-          <li><b>You can only select 3 numbers that make a straight line (ex. ABC, ADH, AEJ).</b></li>
-        </ul>
+        <div className="p-4 pt-8">
+          <ul className="space-y-2">
+            <li>This game is from Korean reality show called <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">The Devil&apos;s Plan</a>.</li>
+            <li>There are 19 random numbers from 1 to 9, and after 60 seconds, the numbers will be replaced with an alphabet character in order.</li>
+            <li>You will be given a target number, and you must remember which 3 combinations of numbers will make the target number.</li>
+            <li>You can select and deselect the number, and once 3 numbers are selected, you will gain 1 point if it is correct, but you will lose 1 point if it is incorrect.</li>
+            <li><b>You can only select 3 numbers that make a straight line (ex. ABC, ADH, AEJ).</b></li>
+          </ul>
+        </div>
       </div>
 
       <div className="flex justify-center gap-6 mb-6">
@@ -350,7 +352,7 @@ export default function HexagonGame() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center gap-6">
+      <div className="flex justify-center gap-6 mt-6">
         <a 
           href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
           target="_blank"
