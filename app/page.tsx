@@ -30,8 +30,8 @@ export default function Home() {
             Hi I&apos;m
           </div>
           <div className="relative font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide">
-            {index === 0 ? '' : 'a'}
-            <span className={`inline-block ${index !== 0 ? 'w-[120px] sm:w-[160px] md:w-[200px] lg:w-[320px] border-b-2 border-black text-center' : ''}`}>
+            {index === 0 ? '' : 'a '}
+            <span className={`inline-block ${index !== 0 ? 'w-[130px] sm:w-[160px] md:w-[200px] lg:w-[320px] border-b-2 border-black text-center' : ''}`}>
               <span className="animate-[fade_5s_infinite]">
                 {words[index]}
               </span>
