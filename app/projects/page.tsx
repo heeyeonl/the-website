@@ -23,8 +23,16 @@ const projects: ProjectCard[] = [
     tags: ['Vue.js', 'JavaScript', 'Sass']
   },
   {
+    title: "Grind",
+    description: "A collection of projects showcasing my journey in mastering data structures and algorithms (DSA) and crafting engaging games.",
+    href: "/projects/grind",
+    icon: <Code2 size={32} />,
+    status: 'available',
+    tags: ['JavaScript', 'CSS', 'HTML']
+  },
+  {
     title: "My Website",
-    description: "This website is built from scratch using Next.js, TypeScript, and Tailwind CSS.",
+    description: "This project highlights my exploration of modern web development technologies and my journey to mastering TypeScript.",
     href: "/projects/my-website",
     icon: <Code2 size={32} />,
     status: 'available',
@@ -32,7 +40,7 @@ const projects: ProjectCard[] = [
   },
   {
     title: "Knitting",
-    description: "I have passion in knitting and I sell my handmade products on Etsy.",
+    description: "A personal passion project where I design and create unique, high-quality knitted items and accessories.",
     href: "/projects/knitting",
     icon: <Store size={32} />,
     status: 'available',

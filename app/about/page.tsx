@@ -1,6 +1,6 @@
 'use client';
 
-import { Hand, Linkedin, Github, Store, Mail } from 'lucide-react';
+import { Hand, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
 export default function About() {
@@ -43,36 +43,12 @@ export default function About() {
           <p className="mb-2">Let&apos;s connect!</p>
           <div className="flex justify-center gap-4">
             <a 
-              href="mailto:heeyeon.lee0@gmail.com"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block text-red-500 hover:text-red-600 transition-colors"
-            >
-              <Mail size={32} />
-            </a>
-            <a 
               href="https://www.linkedin.com/in/heeyeonl/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block text-blue-500 hover:text-blue-600 transition-colors"
             >
               <Linkedin size={32} />
-            </a>
-            <a 
-              href="https://github.com/heeyeonl"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block text-gray-700 hover:text-gray-800 transition-colors"
-            >
-              <Github size={32} />
-            </a>
-            <a 
-              href="http://etsy.com/shop/HeeyeonKnits"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block text-orange-500 hover:text-orange-600 transition-colors"
-            >
-              <Store size={32} />
             </a>
           </div>
         </div>
