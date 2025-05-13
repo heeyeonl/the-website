@@ -18,9 +18,7 @@ export default function HomepageEditor() {
         <h1 className="text-4xl font-sansita mb-4">Homepage Editor</h1>
         <div className="prose max-w-none">
           <p className="text-lg text-gray-600 mb-6">
-            While I was working at <a href="https://www.awardco.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">Awardco</a>, I was in charge of the homepage editor.
-            The homepage editor is a web-based tool that allows users to customize and preview their homepage layouts in real-time.
-            Built with modern web technologies to provide a seamless editing experience.
+            While I was working at <a href="https://www.awardco.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">Awardco</a>, I developed a widget-based homepage editor using reusable Vue components; enabled 500+ clients to customize platforms independently, reducing support tickets by 80%.
           </p>
           
           <h2 className="text-2xl font-sansita mt-8 mb-4">Key Features</h2>
