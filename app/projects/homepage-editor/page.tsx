@@ -18,7 +18,8 @@ export default function HomepageEditor() {
         <h1 className="text-4xl font-sansita mb-4">Homepage Editor</h1>
         <div className="prose max-w-none">
           <p className="text-lg text-gray-600 mb-6">
-            A web-based tool that allows users to customize and preview their homepage layouts in real-time.
+            While I was working at <a href="https://www.awardco.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">Awardco</a>, I was in charge of the homepage editor.
+            The homepage editor is a web-based tool that allows users to customize and preview their homepage layouts in real-time.
             Built with modern web technologies to provide a seamless editing experience.
           </p>
           
@@ -28,13 +29,7 @@ export default function HomepageEditor() {
             <li>Drag-and-drop interface for easy customization</li>
             <li>Responsive design testing capabilities</li>
             <li>Component library with customizable elements</li>
-            <li>Export functionality for implemented designs</li>
-          </ul>
-
-          <h2 className="text-2xl font-sansita mt-8 mb-4">Technologies Used</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Vue.js for the frontend interface</li>
-            <li>CSS/Sass for styling</li>
+            <li>Ability to add variants of available widgets</li>
           </ul>
         </div>
       </header>
@@ -87,10 +82,6 @@ export default function HomepageEditor() {
             <li>
               <strong>Responsive Testing:</strong> Adding tools to test and adjust layouts across different
               screen sizes.
-            </li>
-            <li>
-              <strong>Export System:</strong> Developing a clean export system that generates production-ready
-              code for the designed layouts.
             </li>
           </ol>
         </div>
