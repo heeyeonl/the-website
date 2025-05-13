@@ -62,7 +62,7 @@ export default function HomepageEditor() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Link to Awardco's official homepage editor introduction video
+              Link to Awardco&apos;s official homepage editor introduction video
             </Link>
           </div>
 

@@ -23,13 +23,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="h-[calc(100vh-4rem)] flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center text-center px-4">
-        <div className="flex flex-col md:flex-row items-center gap-5 font-sansita text-[60px] md:text-[40px] tracking-wide">
-          <div>Hi I&apos;m</div>
-          <div className="relative">
+    <main className="h-[calc(100vh-4rem)] flex items-center justify-center px-4">
+      <div className="flex flex-col items-center justify-center text-center">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-5">
+          <div className="font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide">
+            Hi I&apos;m
+          </div>
+          <div className="relative font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide">
             {index === 0 ? '' : 'a'}
-            <span className={`inline-block ${index !== 0 ? 'w-[200px] md:w-[320px] border-b-2 border-black text-center' : ''}`}>
+            <span className={`inline-block ${index !== 0 ? 'w-[120px] sm:w-[160px] md:w-[200px] lg:w-[320px] border-b-2 border-black text-center' : ''}`}>
               <span className="animate-[fade_5s_infinite]">
                 {words[index]}
               </span>

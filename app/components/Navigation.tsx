@@ -2,9 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
     return pathname === path ? 'text-blue-500 font-bold' : 'text-gray-600 hover:text-blue-500';
@@ -17,7 +20,17 @@ export default function Navigation() {
           <Link href="/" className="text-xl font-bold text-gray-800 hover:text-blue-500">
             heeyeonl
           </Link>
-          <div className="flex space-x-8 items-center">
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-md hover:bg-gray-100"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Desktop navigation */}
+          <div className="hidden md:flex space-x-8 items-center">
             <Link href="/projects" className={`${isActive('/projects')} transition-colors duration-200`}>
               projects
             </Link>
@@ -31,6 +44,45 @@ export default function Navigation() {
               href="/HeeyeonLee_Resume.pdf"
               download
               className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+            >
+              resume
+            </a>
+          </div>
+        </div>
+
+        {/* Mobile navigation */}
+        <div className={`
+          md:hidden 
+          ${isMenuOpen ? 'max-h-48 py-2' : 'max-h-0'} 
+          overflow-hidden transition-all duration-300 ease-in-out
+        `}>
+          <div className="flex flex-col space-y-4 pb-3">
+            <Link 
+              href="/projects" 
+              className={`${isActive('/projects')} transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              projects
+            </Link>
+            <Link 
+              href="/games" 
+              className={`${isActive('/games')} transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              games
+            </Link>
+            <Link 
+              href="/about" 
+              className={`${isActive('/about')} transition-colors duration-200`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              about
+            </Link>
+            <a
+              href="/HeeyeonLee_Resume.pdf"
+              download
+              className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+              onClick={() => setIsMenuOpen(false)}
             >
               resume
             </a>
