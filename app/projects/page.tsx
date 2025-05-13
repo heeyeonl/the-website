@@ -24,11 +24,11 @@ const projects: ProjectCard[] = [
   },
   {
     title: "My Website",
-    description: "This is my personal website built with Next.js, TypeScript, and Tailwind CSS.",
+    description: "This website is built from scratch using Next.js, TypeScript, and Tailwind CSS.",
     href: "/projects/my-website",
     icon: <Code2 size={32} />,
     status: 'available',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS']
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel']
   },
   {
     title: "Knitting",
