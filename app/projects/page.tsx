@@ -44,7 +44,6 @@ const projects: ProjectCard[] = [
     href: "/projects/knitting",
     icon: <Store size={32} />,
     status: 'available',
-    statusColor: 'text-orange-500',
     tags: ['Business', 'Hobby', 'Craft']
   },
   {
