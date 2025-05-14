@@ -23,14 +23,6 @@ const games: GameCard[] = [
     tags: ['React', 'TypeScript', 'Game Logic']
   },
   {
-    title: "Tic Tac Toe",
-    description: "The classic game of X's and O's with a modern twist. Play against a friend or challenge the AI opponent with different difficulty levels.",
-    href: "/games/tic-tac-toe",
-    icon: <Gamepad2 size={32} />,
-    status: 'coming-soon',
-    tags: ['React', 'AI', 'Multiplayer']
-  },
-  {
     title: "More Games",
     description: "More exciting games are in development! Stay tuned for new additions to the game collection.",
     href: "#",
