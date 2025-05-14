@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
-import { Brain, Gamepad, Plus } from 'lucide-react';
+import { Gamepad2, Plus } from 'lucide-react';
+import Card from '../components/Card';
 
 interface GameCard {
   title: string;
@@ -9,22 +9,34 @@ interface GameCard {
   href: string;
   icon: React.ReactNode;
   status: 'available' | 'coming-soon';
+  statusColor?: string;
+  tags: string[];
 }
 
 const games: GameCard[] = [
   {
-    title: "Hexagon",
-    description: "A memory game from 'The Devil's Plan' where you need to find combinations of numbers that add up to a target sum.",
+    title: "Hexagon Game",
+    description: "A challenging puzzle game where you need to match colors in a hexagonal grid. Test your strategic thinking and pattern recognition skills.",
     href: "/games/hexagon",
-    icon: <Brain size={32} />,
-    status: 'available'
+    icon: <Gamepad2 size={32} />,
+    status: 'available',
+    tags: ['React', 'TypeScript', 'Game Logic']
   },
   {
-    title: "Coming Soon",
-    description: "More exciting games are on the way! Stay tuned for new additions to our game collection.",
+    title: "Tic Tac Toe",
+    description: "The classic game of X's and O's with a modern twist. Play against a friend or challenge the AI opponent with different difficulty levels.",
+    href: "/games/tic-tac-toe",
+    icon: <Gamepad2 size={32} />,
+    status: 'coming-soon',
+    tags: ['React', 'AI', 'Multiplayer']
+  },
+  {
+    title: "More Games",
+    description: "More exciting games are in development! Stay tuned for new additions to the game collection.",
     href: "#",
     icon: <Plus size={32} />,
-    status: 'coming-soon'
+    status: 'coming-soon',
+    tags: []
   }
 ];
 
@@ -32,40 +44,22 @@ export default function Games() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="flex items-center gap-4 mb-8">
-        <Gamepad size={40} className="text-blue-500" />
-        <h1 className="text-3xl font-bold">Games</h1>
+        <Gamepad2 size={40} className="text-[var(--secondary-color)]" />
+        <h1 className="text-3xl font-bold text-[var(--text-primary)]">games</h1>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {games.map((game) => (
-          <div
+          <Card
             key={game.title}
-            className={`border rounded-lg p-6 shadow-sm transition-all duration-300 ${
-              game.status === 'available'
-                ? 'hover:shadow-md hover:-translate-y-1 bg-white'
-                : 'bg-gray-50'
-            }`}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`${game.status === 'available' ? 'text-blue-500' : 'text-gray-400'}`}>
-                {game.icon}
-              </div>
-              <h2 className="text-xl font-semibold">{game.title}</h2>
-            </div>
-            <p className="text-gray-600 mb-4">{game.description}</p>
-            {game.status === 'available' ? (
-              <Link
-                href={game.href}
-                className="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
-              >
-                Play Now
-              </Link>
-            ) : (
-              <span className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-md cursor-not-allowed">
-                Coming Soon
-              </span>
-            )}
-          </div>
+            title={game.title}
+            description={game.description}
+            icon={game.icon}
+            iconColor={game.statusColor}
+            href={game.href}
+            tags={game.tags}
+            status={game.status}
+          />
         ))}
       </div>
     </div>

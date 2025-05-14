@@ -10,24 +10,26 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
-    return pathname === path ? 'text-blue-500 font-bold' : 'text-gray-600 hover:text-blue-500';
+    return pathname === path ? 'text-[var(--text-hover)] font-bold' : 'text-[var(--text-secondary)] hover:text-[var(--text-hover)]';
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#faf6f1]/80 backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-[var(--nav-bg)] backdrop-blur-sm shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-gray-800 hover:text-blue-500">
+          <Link href="/" className="text-xl font-bold text-[var(--text-primary)] hover:text-[var(--text-hover)]">
             heeyeonl
           </Link>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center space-x-4">
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-md hover:bg-[var(--ui-white)] text-[var(--text-secondary)]"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex space-x-8 items-center">
@@ -43,7 +45,7 @@ export default function Navigation() {
             <a
               href="/HeeyeonLee_Resume.pdf"
               download
-              className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors duration-200"
             >
               resume
             </a>
@@ -81,7 +83,7 @@ export default function Navigation() {
             <a
               href="/HeeyeonLee_Resume.pdf"
               download
-              className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               resume

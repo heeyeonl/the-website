@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { Code2, Folder, Plus, Store } from 'lucide-react';
+import Card from '../components/Card';
 
 interface ProjectCard {
   title: string;
@@ -22,14 +22,14 @@ const projects: ProjectCard[] = [
     status: 'available',
     tags: ['Vue.js', 'JavaScript', 'Sass']
   },
-  {
-    title: "Grind",
-    description: "A collection of projects showcasing my journey in mastering data structures and algorithms (DSA) and crafting engaging games.",
-    href: "/projects/grind",
-    icon: <Code2 size={32} />,
-    status: 'available',
-    tags: ['JavaScript', 'CSS', 'HTML']
-  },
+  // {
+  //   title: "Grind",
+  //   description: "A collection of projects showcasing my journey in mastering data structures and algorithms (DSA) and crafting engaging games.",
+  //   href: "/projects/grind",
+  //   icon: <Code2 size={32} />,
+  //   status: 'available',
+  //   tags: ['JavaScript', 'CSS', 'HTML']
+  // },
   {
     title: "My Website",
     description: "This project highlights my exploration of modern web development technologies and my journey to mastering TypeScript.",
@@ -61,52 +61,22 @@ export default function Projects() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="flex items-center gap-4 mb-8">
-        <Folder size={40} className="text-blue-500" />
-        <h1 className="text-3xl font-bold">projects</h1>
+        <Folder size={40} className="text-[var(--secondary-color)]" />
+        <h1 className="text-3xl font-bold text-[var(--text-primary)]">projects</h1>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <div
+          <Card
             key={project.title}
-            className={`border rounded-lg p-6 shadow-sm transition-all duration-300 ${
-              project.status === 'available'
-                ? 'hover:shadow-md hover:-translate-y-1 bg-white'
-                : 'bg-gray-50'
-            }`}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className={`${project.status === 'available' ? `${project.statusColor ? project.statusColor : 'text-blue-500'}` : 'text-gray-400'}`}>
-                {project.icon}
-              </div>
-              <h2 className="text-xl font-semibold">{project.title}</h2>
-            </div>
-            <p className="text-gray-600 mb-4">{project.description}</p>
-            {project.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-            {project.status === 'available' ? (
-              <Link
-                href={project.href}
-                className="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
-              >
-                Learn More
-              </Link>
-            ) : (
-              <span className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-md cursor-not-allowed">
-                Coming Soon
-              </span>
-            )}
-          </div>
+            title={project.title}
+            description={project.description}
+            icon={project.icon}
+            iconColor={project.statusColor}
+            href={project.href}
+            tags={project.tags}
+            status={project.status}
+          />
         ))}
       </div>
     </div>

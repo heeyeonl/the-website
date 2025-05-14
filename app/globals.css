@@ -6,9 +6,28 @@
   --ui-white: #ffffff;
   --primary-color: #ef4444;
   --primary-color-hover: #dc2626;
-  --secondary-color: #3b82f6;
-  --secondary-color-hover: #2563eb;
+  --secondary-color: #d2bd96;
+  --secondary-color-hover: #c8ae7e;
   --box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --nav-bg: rgba(250, 246, 241, 0.8);
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+  --text-hover: #d2bd96;
+}
+
+:root.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --ui-white: #2d2d2d;
+  --primary-color: #ef4444;
+  --primary-color-hover: #dc2626;
+  --secondary-color: #d2bd96;
+  --secondary-color-hover: #c8ae7e;
+  --box-shadow: 0 1px 3px 0 rgb(255 255 255 / 0.1), 0 1px 2px -1px rgb(255 255 255 / 0.1);
+  --nav-bg: rgba(26, 26, 26, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-hover: #d2bd96;
 }
 
 @theme inline {

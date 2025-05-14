@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { avenir } from './fonts';
 import "./globals.css";
 import Navigation from "./components/Navigation";
+import ThemeToggle from "./components/ThemeToggle";
+import { ThemeProvider } from "./context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Heeyeon Lee",
@@ -15,11 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${avenir.variable}`}>
-      <body className="font-avenir bg-[#faf6f1]">
-        <Navigation />
-        <main className="pt-16">
-          {children}
-        </main>
+      <body className="font-avenir">
+        <ThemeProvider>
+          <Navigation />
+          <main className="pt-16">
+            {children}
+          </main>
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   );

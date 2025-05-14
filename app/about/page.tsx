@@ -8,13 +8,13 @@ export default function About() {
     <div className="flex justify-center py-20">
       <div className="max-w-[500px] px-4">
         <div className="flex items-center gap-2">
-          <Hand size={22} className="text-gray-700" />
-          <p>Hello, nice to meet you! :)</p>
+          <Hand size={22} className="text-[var(--text-secondary)]" />
+          <p className="text-[var(--text-primary)]">Hello, nice to meet you! :)</p>
         </div>
         
-        <h1 className="text-3xl font-bold my-4">About me</h1>
+        <h1 className="text-3xl font-bold my-4 text-[var(--text-primary)]">About me</h1>
         
-        <div className="flex flex-col gap-6 mb-9">
+        <div className="flex flex-col gap-6 mb-9 text-[var(--text-secondary)]">
           <p>
             I am Heeyeon Lee, a Front-end Engineer with 5 years of industry experience.
             I graduated with a Computer Science degree from Brigham Young University, Provo, Utah.
@@ -40,13 +40,13 @@ export default function About() {
         </div>
 
         <div className="text-center my-6">
-          <p className="mb-2">Let&apos;s connect!</p>
+          <p className="mb-2 text-[var(--text-primary)]">Let&apos;s connect!</p>
           <div className="flex justify-center gap-4">
             <a 
               href="https://www.linkedin.com/in/heeyeonl/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block text-blue-500 hover:text-blue-600 transition-colors"
+              className="inline-block text-[var(--secondary-color)] hover:text-[var(--secondary-color-hover)] transition-colors"
             >
               <Linkedin size={32} />
             </a>
