@@ -45,7 +45,7 @@ export default function Navigation() {
             <a
               href="/HeeyeonLee_Resume.pdf"
               download
-              className="text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors duration-200"
+              className="font-bold text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors duration-200"
             >
               resume
             </a>
