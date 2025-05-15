@@ -15,8 +15,8 @@ interface GameCard {
 
 const games: GameCard[] = [
   {
-    title: "Hexagon Game",
-    description: "A challenging puzzle game where you need to match colors in a hexagonal grid. Test your strategic thinking and pattern recognition skills.",
+    title: "Hexagon",
+    description: "Inspired by a Korean TV show's famous game, players recall tile numbers on a hex grid to match a target sum and score points.",
     href: "/games/hexagon",
     icon: <Gamepad2 size={32} />,
     status: 'available',

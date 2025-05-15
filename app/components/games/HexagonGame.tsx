@@ -219,10 +219,10 @@ export default function HexagonGame() {
             href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group inline-block text-gray-700 hover:text-gray-800 transition-colors"
+            className="relative group inline-block text-[var(--text-primary)] hover:text-[var(--text-hover)] transition-colors"
           >
             <Github size={32} />
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-[var(--ui-white)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               See code here
             </span>
           </a>
@@ -241,12 +241,19 @@ export default function HexagonGame() {
           />
         </div>
         <div className="p-4 pt-8">
-          <ul className="space-y-2">
-            <li>This game is from Korean reality show called <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-[var(--secondary-color)] hover:text-[var(--secondary-color-hover)]">The Devil&apos;s Plan</a>.</li>
-            <li>There are 19 random numbers from 1 to 9, and after 60 seconds, the numbers will be replaced with an alphabet character in order.</li>
-            <li>You will be given a target number, and you must remember which 3 combinations of numbers will make the target number.</li>
-            <li>You can select and deselect the number, and once 3 numbers are selected, you will gain 1 point if it is correct, but you will lose 1 point if it is incorrect.</li>
-            <li><b>You can only select 3 numbers that make a straight line (ex. ABC, ADH, AEJ).</b></li>
+          <ul className="space-y-4">
+            <li>This game, featured in the Korean reality show <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-[var(--secondary-color)] hover:text-[var(--secondary-color-hover)]">The Devil&apos;s Plan,</a> challenges memory and strategy.</li>
+            <li>
+              <p className="mb-2">How to play:</p>
+              <ol className="list-disc pl-5 space-y-2">
+                <li>The grid displays 19 random numbers (1-9) for 60 seconds before they turn into alphabet characters in order.</li>
+                <li>A timer starts when you select your first tile.</li>
+                <li>You are given a target number and must recall which three tiles add up to it.</li>
+                <li>Tiles can only be selected if they form a straight line (e.g., ABC, ADH, AEJ).</li>
+                <li>Select and deselect tiles as needed, but once three tiles are chosen, the combination is locked.</li>
+                <li>Earn 1 point for a correct combination, but lose 1 point for an incorrect one or for repeating a previously used combination.</li>
+              </ol>
+            </li>
           </ul>
         </div>
       </div>
@@ -364,6 +371,19 @@ export default function HexagonGame() {
             />
           </div>
         </div>
+      </div>
+      <div className="flex justify-center gap-6 mt-6">
+        <a 
+          href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group inline-block text-gray-700 hover:text-gray-800 transition-colors"
+        >
+          <Github size={32} />
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            See code here
+          </span>
+        </a>
       </div>
     </div>
   );

@@ -43,18 +43,26 @@ body {
   font-family: var(--font-avenir), Arial, Helvetica, sans-serif;
 }
 
-@keyframes tilt-shaking {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  50% { transform: rotate(0eg); }
-  75% { transform: rotate(-2deg); }
-  100% { transform: rotate(0deg); }
-}
-
 @keyframes shake {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(2deg); }
   50% { transform: rotate(0deg); }
   75% { transform: rotate(-2deg); }
   100% { transform: rotate(0deg); }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+  transform-origin: bottom right;
 }

@@ -8,7 +8,9 @@ export default function About() {
     <div className="flex justify-center py-20">
       <div className="max-w-[500px] px-4">
         <div className="flex items-center gap-2">
-          <Hand size={22} className="text-[var(--text-secondary)]" />
+          <div className="animate-wave">
+            <Hand size={22} className="text-[var(--text-secondary)]" />
+          </div>
           <p className="text-[var(--text-primary)]">Hello, nice to meet you! :)</p>
         </div>
         
