@@ -18,7 +18,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-bold text-[var(--text-primary)] hover:text-[var(--text-hover)]">
-            heeyeonl
+            Heeyeon Lee
           </Link>
 
           <div className="flex items-center space-x-4">
@@ -33,22 +33,18 @@ export default function Navigation() {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex space-x-8 items-center">
-            <Link href="/projects" className={`${isActive('/projects')} transition-colors duration-200`}>
+            <Link href="/projects" className={`${isActive('/projects')} text-xs transition-colors duration-200`}>
               projects
             </Link>
-            <Link href="/games" className={`${isActive('/games')} transition-colors duration-200`}>
+            <Link href="/games" className={`${isActive('/games')} text-xs transition-colors duration-200`}>
               games
             </Link>
-            <Link href="/about" className={`${isActive('/about')} transition-colors duration-200`}>
+            <Link href="/about" className={`${isActive('/about')} text-xs transition-colors duration-200`}>
               about
             </Link>
-            <a
-              href="/HeeyeonLee_Resume.pdf"
-              download
-              className="font-bold text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors duration-200"
-            >
+            <Link href="/resume" className={`${isActive('/resume')} text-xs transition-colors duration-200`}>
               resume
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -61,33 +57,32 @@ export default function Navigation() {
           <div className="flex flex-col space-y-4 pb-3 items-end">
             <Link 
               href="/projects" 
-              className={`${isActive('/projects')} transition-colors duration-200`}
+              className={`${isActive('/projects')} text-sm transition-colors duration-200`}
               onClick={() => setIsMenuOpen(false)}
             >
               projects
             </Link>
             <Link 
               href="/games" 
-              className={`${isActive('/games')} transition-colors duration-200`}
+              className={`${isActive('/games')} text-sm transition-colors duration-200`}
               onClick={() => setIsMenuOpen(false)}
             >
               games
             </Link>
             <Link 
               href="/about" 
-              className={`${isActive('/about')} transition-colors duration-200`}
+              className={`${isActive('/about')} text-sm transition-colors duration-200`}
               onClick={() => setIsMenuOpen(false)}
             >
               about
             </Link>
-            <a
-              href="/HeeyeonLee_Resume.pdf"
-              download
-              className="text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors duration-200"
+            <Link 
+              href="/resume" 
+              className={`${isActive('/resume')} text-sm transition-colors duration-200`}
               onClick={() => setIsMenuOpen(false)}
             >
               resume
-            </a>
+            </Link>
           </div>
         </div>
       </div>
