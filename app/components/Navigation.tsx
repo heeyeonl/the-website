@@ -5,6 +5,13 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
+const navItems = [
+  { path: '/projects', label: 'projects' },
+  { path: '/games', label: 'games' },
+  { path: '/about', label: 'about' },
+  { path: '/resume', label: 'resume' },
+];
+
 export default function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,18 +40,15 @@ export default function Navigation() {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex space-x-8 items-center">
-            <Link href="/projects" className={`${isActive('/projects')} text-xs transition-colors duration-200`}>
-              projects
-            </Link>
-            <Link href="/games" className={`${isActive('/games')} text-xs transition-colors duration-200`}>
-              games
-            </Link>
-            <Link href="/about" className={`${isActive('/about')} text-xs transition-colors duration-200`}>
-              about
-            </Link>
-            <Link href="/resume" className={`${isActive('/resume')} text-xs transition-colors duration-200`}>
-              resume
-            </Link>
+            {navItems.map((item) => (
+              <Link 
+                key={item.path}
+                href={item.path} 
+                className={`${isActive(item.path)} text-xs transition-colors duration-200`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -55,34 +59,16 @@ export default function Navigation() {
           overflow-hidden transition-all duration-300 ease-in-out
         `}>
           <div className="flex flex-col space-y-4 pb-3 items-end">
-            <Link 
-              href="/projects" 
-              className={`${isActive('/projects')} text-sm transition-colors duration-200`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              projects
-            </Link>
-            <Link 
-              href="/games" 
-              className={`${isActive('/games')} text-sm transition-colors duration-200`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              games
-            </Link>
-            <Link 
-              href="/about" 
-              className={`${isActive('/about')} text-sm transition-colors duration-200`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              about
-            </Link>
-            <Link 
-              href="/resume" 
-              className={`${isActive('/resume')} text-sm transition-colors duration-200`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              resume
-            </Link>
+            {navItems.map((item) => (
+              <Link 
+                key={item.path}
+                href={item.path} 
+                className={`${isActive(item.path)} text-sm transition-colors duration-200`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
