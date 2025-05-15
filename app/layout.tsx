@@ -8,6 +8,11 @@ import { ThemeProvider } from "./context/ThemeContext";
 export const metadata: Metadata = {
   title: "Heeyeon Lee",
   description: "Welcome to my website!",
+  icons: {
+    icon: [
+      { url: '/tabicon.png', sizes: 'any' }
+    ],
+  },
 };
 
 export default function RootLayout({
