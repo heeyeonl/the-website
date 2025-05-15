@@ -72,7 +72,7 @@ export default function Card({
             {actionLabel}
           </Link>
         ) : (
-          <span className="inline-block bg-gray-300 text-[var(--ui-white)] px-4 py-2 rounded-md cursor-not-allowed">
+          <span className="inline-block opacity-60 bg-[#d4d4d4] text-[var(--ui-white)] px-4 py-2 rounded-md cursor-not-allowed">
             Coming Soon
           </span>
         )

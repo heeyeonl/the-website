@@ -17,7 +17,7 @@ export default function Home() {
       setIndex((prevIndex) => 
         prevIndex < words.length - 1 ? prevIndex + 1 : 0
       );
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -32,7 +32,7 @@ export default function Home() {
           <div className="relative font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide">
             {index === 0 ? '' : 'a '}
             <span className={`inline-block ${index !== 0 ? 'w-[130px] sm:w-[160px] md:w-[200px] lg:w-[320px] border-b-2 border-[var(--text-primary)] text-center' : ''}`}>
-              <span className="animate-[fade_5s_infinite]">
+              <span className="animate-[fade_2s_infinite]">
                 {words[index]}
               </span>
             </span>

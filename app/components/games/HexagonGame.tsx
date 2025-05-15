@@ -229,32 +229,46 @@ export default function HexagonGame() {
         </div>
       </div>
       
-      <div className={`
-        ${showDescription ? 'opacity-100 h-auto mb-9' : 'h-0 opacity-0 overflow-hidden'}
-        relative bg-[var(--ui-white)] rounded-lg shadow-md transition-all duration-500
-      `}>
-        <div className="absolute top-2 right-2">
-          <X
-            size={28}
-            className="p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+      {/* Description Wrapper */}
+      <div className="relative mb-9">
+        {/* Overlay to detect outside clicks */}
+        {showDescription && (
+          <div 
+            className="fixed inset-0 z-[5]" 
             onClick={() => setShowDescription(false)}
-          />
-        </div>
-        <div className="p-4 pt-8">
-          <ul className="space-y-4">
-            <li>This game, featured in the Korean reality show <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-[var(--secondary-color)] hover:text-[var(--secondary-color-hover)]">The Devil&apos;s Plan,</a> challenges memory and strategy.</li>
-            <li>
-              <p className="mb-2">How to play:</p>
-              <ol className="list-disc pl-5 space-y-2">
-                <li>The grid displays 19 random numbers (1-9) for 60 seconds before they turn into alphabet characters in order.</li>
-                <li>A timer starts when you select your first tile.</li>
-                <li>You are given a target number and must recall which three tiles add up to it.</li>
-                <li>Tiles can only be selected if they form a straight line (e.g., ABC, ADH, AEJ).</li>
-                <li>Select and deselect tiles as needed, but once three tiles are chosen, the combination is locked.</li>
-                <li>Earn 1 point for a correct combination, but lose 1 point for an incorrect one or for repeating a previously used combination.</li>
-              </ol>
-            </li>
-          </ul>
+          ></div>
+        )}
+        
+        <div className={`
+          ${showDescription ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          absolute top-0 left-0 z-10 w-full md:w-2/3 max-w-xl
+          bg-[var(--ui-white)] rounded-lg shadow-md transition-all duration-300
+        `}
+        onClick={(e) => e.stopPropagation()} // Prevent clicks from reaching the overlay
+        >
+          <div className="absolute top-2 right-2">
+            <X
+              size={28}
+              className="p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+              onClick={() => setShowDescription(false)}
+            />
+          </div>
+          <div className="p-4 pt-8">
+            <ul className="space-y-4">
+              <li>This game, featured in the Korean reality show <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-[var(--secondary-color)] hover:text-[var(--secondary-color-hover)]">The Devil&apos;s Plan,</a> challenges memory and strategy.</li>
+              <li>
+                <p className="mb-2">How to play:</p>
+                <ol className="list-disc pl-5 space-y-2">
+                  <li>The grid displays 19 random numbers (1-9) for 60 seconds before they turn into alphabet characters in order.</li>
+                  <li>A timer starts when you select your first tile.</li>
+                  <li>You are given a target number and must recall which three tiles add up to it.</li>
+                  <li>Tiles can only be selected if they form a straight line (e.g., ABC, ADH, AEJ).</li>
+                  <li>Select and deselect tiles as needed, but once three tiles are chosen, the combination is locked.</li>
+                  <li>Earn 1 point for a correct combination, but lose 1 point for an incorrect one or for repeating a previously used combination.</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

@@ -10,7 +10,8 @@ interface GameCard {
   icon: React.ReactNode;
   status: 'available' | 'coming-soon';
   statusColor?: string;
-  tags: string[];
+  tags?: string[];
+  actionLabel?: string;
 }
 
 const games: GameCard[] = [
@@ -20,7 +21,15 @@ const games: GameCard[] = [
     href: "/games/hexagon",
     icon: <Gamepad2 size={32} />,
     status: 'available',
-    tags: ['React', 'TypeScript', 'Game Logic']
+    actionLabel: 'Play Now',
+  },
+  {
+    title: "Tic Tac Toe +",
+    description: "Play classic Tic Tac Toe, or toggle to Infinite Tic Tac Toe! Once the board’s full, replace your oldest moves and keep the game going—endless strategy and chaos!",
+    href: "/games/tic-tac-toe",
+    icon: <Gamepad2 size={32} />,
+    status: 'available',
+    actionLabel: 'Play Now',
   },
   {
     title: "More Games",
@@ -28,7 +37,6 @@ const games: GameCard[] = [
     href: "#",
     icon: <Plus size={32} />,
     status: 'coming-soon',
-    tags: []
   }
 ];
 
@@ -51,6 +59,7 @@ export default function Games() {
             href={game.href}
             tags={game.tags}
             status={game.status}
+            actionLabel={game.actionLabel}
           />
         ))}
       </div>
