@@ -75,13 +75,11 @@ export default function TicTacToeGame() {
       {/* Header */}
       <div className="flex items-center mb-6 relative">
         <h1 className="text-4xl font-sansita">Tic Tac Toe +</h1>
-        {!showDescription && (
           <Info
             size={28}
             className="ml-2 p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
             onClick={() => setShowDescription(true)}
           />
-        )}
         <div className="absolute top-0 right-0">
           <a
             href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/TicTacToeGame.tsx"
