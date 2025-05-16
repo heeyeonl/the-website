@@ -86,12 +86,12 @@ export default function HomepageEditor() {
               key={image.id} 
               className="group relative cursor-pointer"
             >
-              <div className="aspect-video relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="aspect-video relative overflow-hidden rounded-lg">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
