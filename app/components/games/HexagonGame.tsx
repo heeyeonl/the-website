@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Github, Info, X } from 'lucide-react';
+import { Info, X } from 'lucide-react';
 const ALPHABET = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 const MESSAGES = {
   'start': 'Click any cell to start the game!',
@@ -206,25 +206,11 @@ export default function HexagonGame() {
   return (
     <div className="w-full">
       <div className="flex items-center mb-6 relative">
-        <h1 className="text-4xl font-sansita">Hexagon</h1>
           <Info
             size={28}
             className="ml-2 p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
             onClick={() => setShowDescription(true)}
           />
-        <div className="absolute top-0 right-0">
-          <a 
-            href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group inline-block text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
-          >
-            <Github size={32} />
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              See code here
-            </span>
-          </a>
-        </div>
       </div>
       
       {/* Description Wrapper */}
@@ -300,34 +286,34 @@ export default function HexagonGame() {
                   onClick={() => !showNumbers && onSelect(cell)}
                 >
                   <div className={`
-                    w-0 border-l-[26px] border-r-[26px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
+                    w-0 border-l-[22px] border-r-[22px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
                     ${showNumbers 
                       ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--foreground)]' 
                       : isSelectedCell
                         ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--foreground)] group-hover:border-b-[var(--foreground-hover)]'
-                        : 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--ui-white)] group-hover:border-b-[var(--foreground)]'
+                        : 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--background)] group-hover:border-b-[var(--foreground)]'
                     }
                     transition-colors
                   `} />
                   <div className={`
-                    flex items-center justify-center w-[52px] sm:w-[78px] md:w-[104px] h-[30px] sm:h-[45px] md:h-[60px] text-[19px] sm:text-[29px] md:text-[38px]
+                    flex items-center justify-center w-[44px] sm:w-[78px] md:w-[104px] h-[22px] sm:h-[45px] md:h-[60px] text-[19px] sm:text-[29px] md:text-[38px]
                     ${showNumbers
                       ? 'bg-[var(--foreground)] text-[var(--ui-white)]'
                       : isSelectedCell
                         ? 'text-[var(--ui-white)] bg-[var(--foreground)] group-hover:bg-[var(--foreground-hover)]'
-                        : 'bg-[var(--ui-white)] group-hover:bg-[var(--foreground)] group-hover:text-[var(--ui-white)]'
+                        : 'bg-[var(--background)] group-hover:bg-[var(--foreground)] group-hover:text-[var(--ui-white)]'
                     }
                     transition-colors
                   `}>
                     {showNumbers ? cell.num : cell.char}
                   </div>
                   <div className={`
-                    w-0 border-l-[26px] border-r-[26px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
+                    w-0 border-l-[22px] border-r-[22px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
                     ${showNumbers
                       ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--foreground)]'
                       : isSelectedCell
                         ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--foreground)] group-hover:border-t-[var(--foreground-hover)]'
-                        : 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--ui-white)] group-hover:border-t-[var(--foreground)]'
+                        : 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--background)] group-hover:border-t-[var(--foreground)]'
                     }
                     transition-colors
                   `} />

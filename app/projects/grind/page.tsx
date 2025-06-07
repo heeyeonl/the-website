@@ -1,4 +1,4 @@
-import ProjectContainer from "@/app/components/ProjectContainer";
+import ProjectContainer from "@/app/components/PageContainer";
 // import GitHubContributions from '@/app/components/GitHubCalendar';
 
 export default function Grind() {

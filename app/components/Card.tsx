@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import Tags from './Tags';
+import Image from 'next/image';
+import { useTheme } from '../context/ThemeContext';
 
 interface CardProps {
   title: string;
@@ -14,6 +16,7 @@ interface CardProps {
   status?: 'available' | 'coming-soon';
   actionLabel?: string;
   className?: string;
+  isHighlighted?: boolean;
 }
 
 export default function Card({
@@ -26,7 +29,9 @@ export default function Card({
   status = 'available',
   actionLabel = 'Learn More',
   className = '',
+  isHighlighted = false,
 }: CardProps) {
+  const { theme } = useTheme();
   const isAvailable = status === 'available';
   
   return (
@@ -69,6 +74,17 @@ export default function Card({
           </span>
         )
       ) : null}
+
+      {isHighlighted && (
+        <Image 
+          src={theme === 'dark' ? "/flower-white.png" : "/flower-black.png"} 
+          alt="Flower" 
+          width={80} 
+          height={80} 
+          className="absolute bottom-2 right-2 flower-spin transition-all"
+          priority
+        />
+      )}
     </div>
   );
 } 

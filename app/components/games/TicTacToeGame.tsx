@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Github, Info, RefreshCcw, X } from "lucide-react";
+import { Info, RefreshCcw, X } from "lucide-react";
 
 export default function TicTacToeGame() {
   const [showDescription, setShowDescription] = useState(false);
@@ -74,25 +74,11 @@ export default function TicTacToeGame() {
     <div className="w-full">
       {/* Header */}
       <div className="flex items-center mb-6 relative">
-        <h1 className="text-4xl font-sansita">Tic Tac Toe +</h1>
           <Info
             size={28}
             className="ml-2 p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
             onClick={() => setShowDescription(true)}
           />
-        <div className="absolute top-0 right-0">
-          <a
-            href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/TicTacToeGame.tsx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group inline-block text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
-          >
-            <Github size={32} />
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              See code here
-            </span>
-          </a>
-        </div>
       </div>
 
       {/* Description Wrapper */}

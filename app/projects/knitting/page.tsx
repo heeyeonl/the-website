@@ -2,7 +2,7 @@
 
 import { Instagram, Store } from 'lucide-react';
 import Image from 'next/image';
-import ProjectContainer from "@/app/components/ProjectContainer";
+import ProjectContainer from "@/app/components/PageContainer";
 
 const FEATURED_PRODUCTS = [
   {

@@ -11,6 +11,7 @@ interface ProjectCard {
   status: 'available' | 'coming-soon';
   statusColor?: string;
   tags: string[];
+  isHighlighted?: boolean;
 }
 
 const projects: ProjectCard[] = [
@@ -28,7 +29,8 @@ const projects: ProjectCard[] = [
     href: "/projects/ai-chat",
     icon: <Code2 size={32} />,
     status: 'available',
-    tags: ['React.js', 'TypeScript', 'NPM', 'AI']
+    tags: ['React.js', 'TypeScript', 'NPM', 'AI'],
+    isHighlighted: true,
   },
   // {
   //   title: "Grind",
@@ -66,8 +68,8 @@ const projects: ProjectCard[] = [
 
 export default function Projects() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="flex items-center gap-4 mb-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="flex items-center gap-4 mb-4">
         <Folder size={40} className="text-[var(--foreground)]" />
         <h1 className="text-3xl font-bold text-[var(--ui-black)]">projects</h1>
       </div>
@@ -83,6 +85,7 @@ export default function Projects() {
             href={project.href}
             tags={project.tags}
             status={project.status}
+            isHighlighted={project.isHighlighted}
           />
         ))}
       </div>

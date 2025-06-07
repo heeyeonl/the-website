@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -28,23 +29,7 @@ const config: Config = {
         'agraham': ['var(--font-agraham)', 'sans-serif'],
         'brillant': ['var(--font-brillant)', 'sans-serif'],
         'specialelite': ['var(--font-specialelite)', 'sans-serif'],
-        'quivert': ['var(--font-quivert)', 'sans-serif'],
         'deiya': ['var(--font-deiya)', 'sans-serif'],
-      },
-      keyframes: {
-        fade: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' }
-        },
-        'tilt-shaking': {
-          '0%, 50%, 100%': { transform: 'rotate(0deg)' },
-          '25%': { transform: 'rotate(2deg)' },
-          '75%': { transform: 'rotate(-2deg)' },
-        }
-      },
-      animation: {
-        fade: 'fade 5s infinite',
-        'tilt-shaking': 'tilt-shaking 1s infinite'
       },
       boxShadow: {
         'custom': '0 3px 10px rgb(0 0 0 / 0.1)',

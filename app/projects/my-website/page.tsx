@@ -1,4 +1,4 @@
-import ProjectContainer from "@/app/components/ProjectContainer";
+import ProjectContainer from "@/app/components/PageContainer";
 import Tags from "@/app/components/Tags";
 
 export default function MyWebsite() {

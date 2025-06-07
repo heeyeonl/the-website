@@ -1,4 +1,4 @@
-import ProjectContainer from "@/app/components/ProjectContainer";
+import ProjectContainer from "@/app/components/PageContainer";
 import { Link2 } from "lucide-react";
 import Tags from "@/app/components/Tags";
 import Image from "next/image";

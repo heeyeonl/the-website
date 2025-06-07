@@ -45,12 +45,6 @@ export const specialelite = localFont({
   display: 'swap',
 })
 
-export const quivert = localFont({
-  src: '../public/fonts/quivert.otf',
-  variable: '--font-quivert',
-  display: 'swap',
-})
-
 export const deiya = localFont({
   src: '../public/fonts/deiya.otf',
   variable: '--font-deiya',

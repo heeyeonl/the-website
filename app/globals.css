@@ -61,3 +61,21 @@ body {
   animation: wave 2s ease-in-out infinite;
   transform-origin: bottom right;
 }
+
+.flower-spin {
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+
+  transition: animation-duration 0.5s ease;
+
+  &:hover {
+    animation-duration: 2s;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
