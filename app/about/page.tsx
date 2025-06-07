@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function About() {
   return (
     <div className="flex justify-center my-10 mx-[5%] sm:mx-[8%] lg:mx-[12%]">
-      <div className=" max-w-[500px] p-10 bg-[var(--ui-white)] border-2 border-dashed rounded-lg">
+      <div className="max-w-[500px] p-6 sm:p-10 bg-[var(--ui-white)] border-2 border-dashed rounded-lg">
         <div className="flex items-center gap-2">
           <div className="animate-wave">
             <Hand size={22} className="text-[var(--ui-black)]" />
