@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import Tags from './Tags';
 
 interface CardProps {
   title: string;
@@ -50,18 +51,7 @@ export default function Card({
         <p className="text-[var(--ui-black)] mb-4">{description}</p>
 
         {/* Tags */}
-        {tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-4">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="bg-[var(--ui-black)]/10 text-[var(--ui-black)] text-xs font-medium px-2.5 py-0.5 rounded"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        {tags.length > 0 && <Tags tags={tags} />}
       </div>
 
       {/* Action Button */}

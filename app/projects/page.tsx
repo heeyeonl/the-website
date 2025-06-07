@@ -22,6 +22,14 @@ const projects: ProjectCard[] = [
     status: 'available',
     tags: ['Vue.js', 'JavaScript', 'Sass']
   },
+  {
+    title: "AI Chat",
+    description: "An NPM package that allows users to easily integrate AI chat functionality into their projects.",
+    href: "/projects/ai-chat",
+    icon: <Code2 size={32} />,
+    status: 'available',
+    tags: ['React.js', 'TypeScript', 'NPM', 'AI']
+  },
   // {
   //   title: "Grind",
   //   description: "A collection of projects showcasing my journey in mastering data structures and algorithms (DSA) and crafting engaging games.",

@@ -4,8 +4,11 @@ import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectContainer from "@/app/components/ProjectContainer";
+import Tags from "@/app/components/Tags";
 
 export default function HomepageEditor() {
+  const tags = ['Vue.js', 'JavaScript', 'Sass', 'Accessibility', 'Responsive Design', 'Design System'];
+
   const projectImages = [
     {
       id: 1,
@@ -37,6 +40,7 @@ export default function HomepageEditor() {
   return (
     <ProjectContainer title="Homepage Editor">
       <section>
+        <Tags tags={tags} />
         <p className="text-lg text-[var(--ui-black)] mb-6">
           While I was working at{" "}
           <a
@@ -65,7 +69,7 @@ export default function HomepageEditor() {
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className="mt-8">
         <h2 className="text-2xl font-sansita mt-8 mb-4">Key Features</h2>
         <ul className="list-disc list-inside space-y-2 text-[var(--ui-black)]">
           <li>Real-time preview of homepage layouts</li>
@@ -76,8 +80,7 @@ export default function HomepageEditor() {
         </ul>
       </section>
 
-      <section className="mt-16">
-        <h2 className="text-2xl font-sansita mb-6">Project Screenshots</h2>
+      <section className="mt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectImages.map((image) => (
             <div 
@@ -98,7 +101,7 @@ export default function HomepageEditor() {
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className="mt-8">
         <h2 className="text-2xl font-sansita mb-6">Development Process</h2>
         <div className="prose max-w-none text-[var(--ui-black)]">
           <p className="mb-4">

@@ -25,7 +25,7 @@ export default function ProjectContainer({
               className="relative group inline-block text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
             >
               <Github size={32} />
-              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--ui-black)] text-[var(--ui-white)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 See code here
               </span>
             </a>
