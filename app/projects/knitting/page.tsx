@@ -1,8 +1,8 @@
 'use client';
 
 import { Instagram, Store } from 'lucide-react';
-import Script from 'next/script';
 import Image from 'next/image';
+import ProjectContainer from "@/app/components/ProjectContainer";
 
 const FEATURED_PRODUCTS = [
   {
@@ -24,81 +24,60 @@ const FEATURED_PRODUCTS = [
 
 export default function EtsyStore() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16 py-16">
-      <div className="flex items-center gap-4 mb-8">
-        <h1 className="text-4xl font-sansita">HeeyeonKnits</h1>
+    <ProjectContainer title="HeeyeonKnits" titleStyle="text-4xl font-[specialelite]">
+      <p>
+        Welcome to my knitting corner! I create handmade knitted items with love and care.
+        Follow me on Instagram to see my latest creations and works in progress.
+      </p>
+
+      <div className="flex flex-col gap-4 mt-8">
+        <a
+          href="https://www.instagram.com/heeyeon.knits/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-fit inline-flex items-center gap-2 text-[var(--accent)] hover:text-[var(--accent-hover)]"
+        >
+          <Instagram size={24} />
+          <span>@heeyeon.knits</span>
+        </a>
+
+        <a
+          href="http://etsy.com/shop/HeeyeonKnits"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-fit inline-flex items-center gap-2 text-[var(--accent)] hover:text-[var(--accent-hover)]"
+        >
+          <Store size={24} />
+          <span>HeeyeonKnits on Etsy</span>
+        </a>
       </div>
 
-      <div className="flex flex-col gap-6">
-        <p>
-          Welcome to my knitting corner! I create handmade knitted items with love and care.
-          Follow me on Instagram to see my latest creations and works in progress.
-        </p>
-
-        <div className="flex flex-col gap-4">
-          <a
-            href="https://www.instagram.com/heeyeon.knits/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 transition-colors"
-          >
-            <Instagram size={24} />
-            <span>@heeyeon.knits</span>
-          </a>
-
-          <a
-            href="http://etsy.com/shop/HeeyeonKnits"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 transition-colors"
-          >
-            <Store size={24} />
-            <span>HeeyeonKnits on Etsy</span>
-          </a>
-        </div>
-
-        <div className="mt-8 grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Latest Creations</h2>
-            <div className="relative overflow-hidden pb-[60%] w-full max-w-[500px]">
-              <iframe
-                src="https://www.instagram.com/heeyeon.knits/embed"
-                className="absolute top-0 left-0 w-full h-full border-none"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Featured Products</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {FEATURED_PRODUCTS.map((product) => (
-                <a
-                  key={product.title}
-                  href={product.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <div className="relative aspect-square overflow-hidden rounded-lg mb-2">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className="object-cover transition-transform group-hover:scale-105"
-                    />
-                  </div>
-                  <p className="text-sm text-[var(--ui-black)] group-hover:text-orange-500 transition-colors">
-                    {product.title}
-                  </p>
-                </a>
-              ))}
-            </div>
-          </div>
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-4">Featured Products</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          {FEATURED_PRODUCTS.map((product) => (
+            <a
+              key={product.title}
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="relative aspect-square overflow-hidden rounded-lg mb-2">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
+                />
+              </div>
+              <p className="text-sm text-[var(--ui-black)] group-hover:text-[var(--accent-hover)] transition-colors">
+                {product.title}
+              </p>
+            </a>
+          ))}
         </div>
       </div>
-      
-      <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
-    </div>
+    </ProjectContainer>
   );
 }

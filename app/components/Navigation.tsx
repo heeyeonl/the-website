@@ -44,11 +44,13 @@ export default function Navigation() {
               <Link 
                 key={item.path}
                 href={item.path} 
-                className={`${isActive(item.path)} text-md transition-colors duration-200`}
+                className={`${isActive(item.path)} text-md transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[var(--ui-black)] after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100`}
               >
                 {item.label}
               </Link>
             ))}
+
+
           </div>
         </div>
 

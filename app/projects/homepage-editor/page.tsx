@@ -3,6 +3,7 @@
 import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ProjectContainer from "@/app/components/ProjectContainer";
 
 export default function HomepageEditor() {
   const projectImages = [
@@ -34,51 +35,48 @@ export default function HomepageEditor() {
   ];
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16 py-16">
-      {/* Project Header */}
-      <header className="mb-12">
-        <h1 className="text-4xl font-sansita mb-4">Homepage Editor</h1>
-        <div className="prose max-w-none">
-          <p className="text-lg text-[var(--ui-black)] mb-6">
-            While I was working at{" "}
-            <a
-              href="https://www.awardco.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
-            >
-              Awardco
-            </a>
-            , I developed a widget-based homepage editor using reusable Vue
-            components, replacing the need for manual HTML edits. This
-            user-friendly tool, featuring drag-and-drop functionality, empowered
-            over 500 clients to independently customize their platforms,
-            reducing support tickets by 80%.
-          </p>
-          <div className="flex items-center gap-2 text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors group">
-            <Link2 size={16} className="group-hover:rotate-45 transition-transform duration-300" />
-            <Link
-              href="https://awardco.my.site.com/Customerhelp/s/article/Homepage-Editor-legacy?language=en_US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Link to Awardco&apos;s official homepage editor introduction video
-            </Link>
-          </div>
-
-          <h2 className="text-2xl font-sansita mt-8 mb-4">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-[var(--ui-black)]">
-            <li>Real-time preview of homepage layouts</li>
-            <li>Drag-and-drop interface for easy customization</li>
-            <li>Responsive design testing capabilities</li>
-            <li>Component library with customizable elements</li>
-            <li>Ability to add variants of available widgets</li>
-          </ul>
-        </div>
-      </header>
-
-      {/* Project Screenshots */}
+    <ProjectContainer title="Homepage Editor">
       <section>
+        <p className="text-lg text-[var(--ui-black)] mb-6">
+          While I was working at{" "}
+          <a
+            href="https://www.awardco.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
+          >
+            Awardco
+          </a>
+          , I developed a widget-based homepage editor using reusable Vue
+          components, replacing the need for manual HTML edits. This
+          user-friendly tool, featuring drag-and-drop functionality, empowered
+          over 500 clients to independently customize their platforms,
+          reducing support tickets by 80%.
+        </p>
+        <div className="flex items-center gap-2 text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors group">
+          <Link2 size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+          <Link
+            href="https://awardco.my.site.com/Customerhelp/s/article/Homepage-Editor-legacy?language=en_US"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link to Awardco&apos;s official homepage editor introduction video
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-2xl font-sansita mt-8 mb-4">Key Features</h2>
+        <ul className="list-disc list-inside space-y-2 text-[var(--ui-black)]">
+          <li>Real-time preview of homepage layouts</li>
+          <li>Drag-and-drop interface for easy customization</li>
+          <li>Responsive design testing capabilities</li>
+          <li>Component library with customizable elements</li>
+          <li>Ability to add variants of available widgets</li>
+        </ul>
+      </section>
+
+      <section className="mt-16">
         <h2 className="text-2xl font-sansita mb-6">Project Screenshots</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectImages.map((image) => (
@@ -100,7 +98,6 @@ export default function HomepageEditor() {
         </div>
       </section>
 
-      {/* Project Details */}
       <section className="mt-16">
         <h2 className="text-2xl font-sansita mb-6">Development Process</h2>
         <div className="prose max-w-none text-[var(--ui-black)]">
@@ -131,6 +128,6 @@ export default function HomepageEditor() {
           </ol>
         </div>
       </section>
-    </main>
+    </ProjectContainer>
   );
 }
