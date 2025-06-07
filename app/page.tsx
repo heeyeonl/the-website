@@ -1,43 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [index, setIndex] = useState(0);
-  const words = [
-    'Heeyeon',
-    'developer',
-    'knitter',
-    'gamer',
-    'cat lover',
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => 
-        prevIndex < words.length - 1 ? prevIndex + 1 : 0
-      );
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <main className="h-[calc(100vh-4rem)] flex items-center justify-center px-4">
-      <div className="flex flex-col items-center justify-center text-center">
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-5">
-          <div className="font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide">
-            Hi I&apos;m
-          </div>
-          <div className="relative font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide">
-            {index === 0 ? '' : 'a '}
-            <span className={`inline-block ${index !== 0 ? 'w-[130px] sm:w-[160px] md:w-[200px] lg:w-[320px] border-b-2 border-[var(--text-primary)] text-center' : ''}`}>
-              <span className="animate-[fade_2s_infinite]">
-                {words[index]}
-              </span>
-            </span>
-          </div>
-        </div>
+      <div className="flex flex-col items-center justify-center text-center gap-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[deiya]">Product-minded Web Developer</h1>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-[brillant]">with a UX-first approach</h2>
+        <p className="text-base md:text-lg">Making the web a more inclusive and delightful place, one pixel and breakpoint at a time.</p>
       </div>
     </main>
   );

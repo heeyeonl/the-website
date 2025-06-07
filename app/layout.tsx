@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { avenir } from './fonts';
+import { avenir, agraham } from './fonts';
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import ThemeToggle from "./components/ThemeToggle";
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${avenir.variable}`}>
+    <html lang="en" className={`${avenir.variable} ${agraham.variable}`}>
       <body className="font-avenir">
         <ThemeProvider>
           <Navigation />

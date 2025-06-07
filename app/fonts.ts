@@ -25,4 +25,34 @@ export const avenir = localFont({
   ],
   variable: '--font-avenir',
   display: 'swap',
+});
+
+export const agraham = localFont({
+  src: '../public/fonts/agraham.personal-use.otf',
+  variable: '--font-agraham',
+  display: 'swap',
 }); 
+
+export const brillant = localFont({
+  src: '../public/fonts/brillant.otf',
+  variable: '--font-brillant',
+  display: 'swap',
+})
+
+export const specialelite = localFont({
+  src: '../public/fonts/specialelite.ttf',
+  variable: '--font-specialelite',
+  display: 'swap',
+})
+
+export const quivert = localFont({
+  src: '../public/fonts/quivert.otf',
+  variable: '--font-quivert',
+  display: 'swap',
+})
+
+export const deiya = localFont({
+  src: '../public/fonts/deiya.otf',
+  variable: '--font-deiya',
+  display: 'swap',
+})

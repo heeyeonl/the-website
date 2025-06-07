@@ -24,7 +24,7 @@ const FEATURED_PRODUCTS = [
 
 export default function EtsyStore() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16 py-16">
       <div className="flex items-center gap-4 mb-8">
         <h1 className="text-4xl font-sansita">HeeyeonKnits</h1>
       </div>
@@ -88,7 +88,7 @@ export default function EtsyStore() {
                       className="object-cover transition-transform group-hover:scale-105"
                     />
                   </div>
-                  <p className="text-sm text-gray-600 group-hover:text-orange-500 transition-colors">
+                  <p className="text-sm text-[var(--ui-black)] group-hover:text-orange-500 transition-colors">
                     {product.title}
                   </p>
                 </a>

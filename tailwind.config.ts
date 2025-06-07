@@ -25,6 +25,11 @@ const config: Config = {
       },
       fontFamily: {
         'avenir': ['var(--font-avenir)', 'sans-serif'],
+        'agraham': ['var(--font-agraham)', 'sans-serif'],
+        'brillant': ['var(--font-brillant)', 'sans-serif'],
+        'specialelite': ['var(--font-specialelite)', 'sans-serif'],
+        'quivert': ['var(--font-quivert)', 'sans-serif'],
+        'deiya': ['var(--font-deiya)', 'sans-serif'],
       },
       keyframes: {
         fade: {

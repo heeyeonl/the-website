@@ -17,14 +17,14 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
-    return pathname === path ? 'text-[var(--text-hover)] font-bold' : 'text-[var(--text-secondary)] hover:text-[var(--text-hover)]';
+    return pathname === path ? 'text-[var(--ui-foreground)] font-bold' : 'text-[var(--ui-foreground)]';
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[var(--nav-bg)] backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 backdrop-blur-sm shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-[var(--text-primary)] hover:text-[var(--text-hover)]">
+          <Link href="/" className="text-xl font-[specialelite] text-[var(--ui-foreground)]">
             Heeyeon Lee
           </Link>
 
@@ -32,7 +32,7 @@ export default function Navigation() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-md hover:bg-[var(--ui-white)] text-[var(--text-secondary)]"
+              className="md:hidden p-2 rounded-md hover:bg-[var(--ui-white)] text-[var(--ui-black)]"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -44,7 +44,7 @@ export default function Navigation() {
               <Link 
                 key={item.path}
                 href={item.path} 
-                className={`${isActive(item.path)} text-xs transition-colors duration-200`}
+                className={`${isActive(item.path)} text-md transition-colors duration-200`}
               >
                 {item.label}
               </Link>

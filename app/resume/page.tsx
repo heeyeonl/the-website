@@ -12,7 +12,7 @@ export default function Resume() {
         >
           <Download 
             size={32}
-            className="ml-2 p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+            className="ml-2 p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
           />
         </a>
       </div>

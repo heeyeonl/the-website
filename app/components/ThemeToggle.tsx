@@ -9,7 +9,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed bottom-6 left-6 p-3 rounded-full opacity-60 bg-[var(--ui-white)] shadow-lg text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-all duration-200 hover:scale-110 z-50"
+      className="fixed bottom-6 left-6 p-3 rounded-full opacity-60 bg-[var(--ui-white)] shadow-lg text-[var(--ui-gray)] hover:text-[var(--ui-gray-hover)] transition-all duration-200 hover:scale-110 z-50"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}

@@ -209,7 +209,7 @@ export default function HexagonGame() {
         <h1 className="text-4xl font-sansita">Hexagon</h1>
           <Info
             size={28}
-            className="ml-2 p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+            className="ml-2 p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
             onClick={() => setShowDescription(true)}
           />
         <div className="absolute top-0 right-0">
@@ -217,7 +217,7 @@ export default function HexagonGame() {
             href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group inline-block text-[var(--text-primary)] hover:text-[var(--text-hover)] transition-colors"
+            className="relative group inline-block text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
           >
             <Github size={32} />
             <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -247,13 +247,13 @@ export default function HexagonGame() {
           <div className="absolute top-2 right-2">
             <X
               size={28}
-              className="p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+              className="p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
               onClick={() => setShowDescription(false)}
             />
           </div>
           <div className="p-4 pt-8">
             <ul className="space-y-4">
-              <li>This game, featured in the Korean reality show <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-[var(--secondary-color)] hover:text-[var(--secondary-color-hover)]">The Devil&apos;s Plan,</a> challenges memory and strategy.</li>
+              <li>This game, featured in the Korean reality show <a href="https://www.netflix.com/title/81653386" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:text-[var(--accent-hover)]">The Devil&apos;s Plan,</a> challenges memory and strategy.</li>
               <li>
                 <p className="mb-2">How to play:</p>
                 <ol className="list-disc pl-5 space-y-2">
@@ -273,15 +273,15 @@ export default function HexagonGame() {
       <div className="flex justify-center gap-6 mb-6">
         <div className="flex flex-col items-center gap-1">
           <div>Target Number</div>
-          <div className="text-3xl text-[var(--secondary-color)]">{numbersSeen ? target : '?'}</div>
+          <div className="text-3xl text-[var(--foreground)]">{numbersSeen ? target : '?'}</div>
         </div>
         <div className="flex flex-col items-center gap-1">
           <div>Possible Answers</div>
-          <div className="text-3xl text-[var(--secondary-color)]">{numbersSeen ? numPossibleAnswer : '?'}</div>
+          <div className="text-3xl text-[var(--foreground)]">{numbersSeen ? numPossibleAnswer : '?'}</div>
         </div>
         <div className="flex flex-col items-center gap-1">
           <div>Earned Points</div>
-          <div className={`text-3xl ${points < 0 ? 'text-[var(--primary-color)]' : 'text-[var(--secondary-color)]'}`}>{points}</div>
+          <div className="text-3xl text-[var(--foreground)]">{points}</div>
         </div>
       </div>
 
@@ -302,20 +302,20 @@ export default function HexagonGame() {
                   <div className={`
                     w-0 border-l-[26px] border-r-[26px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
                     ${showNumbers 
-                      ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--secondary-color)]' 
+                      ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--foreground)]' 
                       : isSelectedCell
-                        ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--primary-color)] group-hover:border-b-[var(--primary-color-hover)]'
-                        : 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--ui-white)] group-hover:border-b-[var(--secondary-color)]'
+                        ? 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--foreground)] group-hover:border-b-[var(--foreground-hover)]'
+                        : 'border-b-[15px] sm:border-b-[23px] md:border-b-[30px] border-b-[var(--ui-white)] group-hover:border-b-[var(--foreground)]'
                     }
                     transition-colors
                   `} />
                   <div className={`
                     flex items-center justify-center w-[52px] sm:w-[78px] md:w-[104px] h-[30px] sm:h-[45px] md:h-[60px] text-[19px] sm:text-[29px] md:text-[38px]
                     ${showNumbers
-                      ? 'bg-[var(--secondary-color)] text-[var(--ui-white)]'
+                      ? 'bg-[var(--foreground)] text-[var(--ui-white)]'
                       : isSelectedCell
-                        ? 'bg-[var(--primary-color)] text-[var(--ui-white)] group-hover:bg-[var(--primary-color-hover)]'
-                        : 'bg-[var(--ui-white)] group-hover:bg-[var(--secondary-color)] group-hover:text-[var(--ui-white)]'
+                        ? 'text-[var(--ui-white)] bg-[var(--foreground)] group-hover:bg-[var(--foreground-hover)]'
+                        : 'bg-[var(--ui-white)] group-hover:bg-[var(--foreground)] group-hover:text-[var(--ui-white)]'
                     }
                     transition-colors
                   `}>
@@ -324,10 +324,10 @@ export default function HexagonGame() {
                   <div className={`
                     w-0 border-l-[26px] border-r-[26px] sm:border-l-[39px] sm:border-r-[39px] md:border-l-[52px] md:border-r-[52px] border-transparent
                     ${showNumbers
-                      ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--secondary-color)]'
+                      ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--foreground)]'
                       : isSelectedCell
-                        ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--primary-color)] group-hover:border-t-[var(--primary-color-hover)]'
-                        : 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--ui-white)] group-hover:border-t-[var(--secondary-color)]'
+                        ? 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--foreground)] group-hover:border-t-[var(--foreground-hover)]'
+                        : 'border-t-[15px] sm:border-t-[23px] md:border-t-[30px] border-t-[var(--ui-white)] group-hover:border-t-[var(--foreground)]'
                     }
                     transition-colors
                   `} />
@@ -342,7 +342,7 @@ export default function HexagonGame() {
         <p>{message}</p>
         {time > 0 && (
           <p className={`
-            ${time < 11 ? 'text-5xl text-[var(--primary-color)] animate-[shake_0.25s_infinite]' : 'text-4xl'}
+            ${time < 11 ? 'text-5xl text-[var(--accent)] animate-[shake_0.25s_infinite]' : 'text-4xl'}
           `}>
             {time}
           </p>
@@ -351,13 +351,13 @@ export default function HexagonGame() {
           <div className="flex gap-6">
             <button
               onClick={nextGame}
-              className="w-[130px] py-3 text-center text-[var(--ui-white)] bg-[var(--secondary-color)] rounded-lg shadow-md hover:bg-[var(--secondary-color-hover)] transition-colors"
+              className="w-[130px] py-3 text-center text-[var(--ui-white)] bg-[var(--foreground)] rounded-lg shadow-md hover:bg-[var(--foreground-hover)] transition-colors hover:cursor-pointer"
             >
               Next Game
             </button>
             <button
               onClick={reset}
-              className="w-[130px] py-3 text-center text-[var(--ui-white)] bg-[var(--primary-color)] rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors"
+              className="w-[130px] py-3 text-center text-[var(--ui-white)] bg-[var(--foreground)] rounded-lg shadow-md hover:bg-[var(--foreground-hover)] transition-colors hover:cursor-pointer"
             >
               Reset (0 points)
             </button>
@@ -383,19 +383,6 @@ export default function HexagonGame() {
             />
           </div>
         </div>
-      </div>
-      <div className="flex justify-center gap-6 mt-6">
-        <a 
-          href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/HexagonGame.tsx"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative group inline-block text-gray-700 hover:text-gray-800 transition-colors"
-        >
-          <Github size={32} />
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            See code here
-          </span>
-        </a>
       </div>
     </div>
   );

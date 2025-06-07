@@ -44,8 +44,8 @@ export default function Games() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="flex items-center gap-4 mb-8">
-        <Gamepad2 size={40} className="text-[var(--secondary-color)]" />
-        <h1 className="text-3xl font-bold text-[var(--text-primary)]">games</h1>
+        <Gamepad2 size={40} className="text-[var(--foreground)]" />
+        <h1 className="text-3xl font-bold text-[var(--ui-black)]">games</h1>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

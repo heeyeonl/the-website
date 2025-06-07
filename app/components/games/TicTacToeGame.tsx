@@ -62,7 +62,7 @@ export default function TicTacToeGame() {
             ? "text-[#4CAF50] bg-[rgba(129,199,132,0.2)]"
             : board[i] === "O"
             ? "text-[#FF5722] bg-[rgba(255,87,34,0.2)]"
-            : "text-[var(--secondary-color)] bg-[var(--ui-white)]"
+            : "text-[var(--accent)] bg-[var(--ui-white)]"
         } w-full aspect-square flex items-center justify-center h-full border-2 text-4xl border-[var(--ui-light)] rounded-md cursor-pointer transition-colors`}
         disabled={board[i] !== "" || !!winner}
       >
@@ -77,7 +77,7 @@ export default function TicTacToeGame() {
         <h1 className="text-4xl font-sansita">Tic Tac Toe +</h1>
           <Info
             size={28}
-            className="ml-2 p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+            className="ml-2 p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
             onClick={() => setShowDescription(true)}
           />
         <div className="absolute top-0 right-0">
@@ -85,7 +85,7 @@ export default function TicTacToeGame() {
             href="https://github.com/heeyeonl/the-website/blob/main/app/components/games/TicTacToeGame.tsx"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group inline-block text-[var(--text-primary)] hover:text-[var(--text-hover)] transition-colors"
+            className="relative group inline-block text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
           >
             <Github size={32} />
             <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -121,7 +121,7 @@ export default function TicTacToeGame() {
           <div className="absolute top-2 right-2">
             <X
               size={28}
-              className="p-1 cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+              className="p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
               onClick={() => setShowDescription(false)}
             />
           </div>
@@ -157,7 +157,7 @@ export default function TicTacToeGame() {
       <div className="flex justify-center mt-4">
         <button
           onClick={() => resetGame()}
-          className="cursor-pointer hover:text-[var(--secondary-color)] transition-colors"
+          className="cursor-pointer hover:text-[var(--accent)] transition-colors"
         >
           <RefreshCcw size={24} />
         </button>
