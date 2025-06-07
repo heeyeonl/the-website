@@ -7,7 +7,7 @@ export default function AiChatNpmPackage() {
     const tags = ['React', 'TypeScript', 'OpenAI - GPT-3.5 Turbo', 'Node.js', 'Render'];
     
   return (
-    <ProjectContainer title="AI Chat NPM Package" githubLink="https://github.com/heeyeonl/chat-widget-package">
+    <ProjectContainer title="AI Chat NPM" githubLink="https://github.com/heeyeonl/chat-widget-package">
         <section>
             <Tags tags={tags} />
             <p>
