@@ -1,10 +1,11 @@
 import { Github } from "lucide-react";
 
-interface ProjectContainerProps {
+interface PageContainerProps {
   children: React.ReactNode;
   title: string;
   titleStyle?: string;
   githubLink?: string;
+  className?: string;
 }
 
 export default function ProjectContainer({
@@ -12,9 +13,10 @@ export default function ProjectContainer({
   title,
   titleStyle,
   githubLink,
-}: ProjectContainerProps) {
+  className,
+}: PageContainerProps) {
   return (
-    <main className="mx-[5%] sm:mx-[8%] lg:mx-[12%] my-4 sm:my-8 lg:my-16 p-6 sm:p-10 lg:p-14 bg-[var(--ui-white)] outline-2 outline-offset-2 border-2 rounded-lg shadow-sm">
+    <main className={`max-w-7xl mx-[5%] sm:mx-[8%] lg:mx-[12%] my-4 sm:my-8 lg:my-16 p-6 sm:p-10 lg:p-14 bg-[var(--ui-white)] outline-2 outline-offset-2 border-2 rounded-lg shadow-sm ${className || ''}`}>
       <header className="mb-8 relative">
         {githubLink && (
           <div className="absolute top-0 right-0">

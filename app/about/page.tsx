@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <div className="flex justify-center py-20">
-      <div className="max-w-[500px] px-4">
+    <div className="flex justify-center my-10 mx-[5%] sm:mx-[8%] lg:mx-[12%]">
+      <div className=" max-w-[500px] p-10 bg-[var(--ui-white)] border-2 border-dashed rounded-lg">
         <div className="flex items-center gap-2">
           <div className="animate-wave">
             <Hand size={22} className="text-[var(--ui-black)]" />
@@ -30,7 +30,7 @@ export default function About() {
         </div>
 
         <div className="text-center">
-          <div className="relative w-[300px] h-[300px] mx-auto md:w-[200px] md:h-[200px]">
+          <div className="relative w-[150px] h-[150px] mx-auto md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px]">
             <Image
               src="/profile.jpg"
               alt="Heeyeon Lee"

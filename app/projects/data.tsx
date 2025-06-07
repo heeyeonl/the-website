@@ -14,15 +14,6 @@ export interface ProjectCard {
 
 export const projects: ProjectCard[] = [
   {
-    title: "Homepage Editor",
-    description:
-      "A homepage editor that allows users to customize their homepage with a drag-and-drop interface.",
-    href: "/projects/homepage-editor",
-    icon: <Code2 size={32} />,
-    status: "available",
-    tags: ["Vue.js", "JavaScript", "Sass"],
-  },
-  {
     title: "AI Chat",
     description:
       "An NPM package that allows users to easily integrate AI chat functionality into their projects.",
@@ -32,6 +23,16 @@ export const projects: ProjectCard[] = [
     tags: ["React.js", "TypeScript", "NPM", "AI"],
     isHighlighted: true,
   },
+  {
+    title: "Homepage Editor",
+    description:
+      "A homepage editor that allows users to customize their homepage with a drag-and-drop interface.",
+    href: "/projects/homepage-editor",
+    icon: <Code2 size={32} />,
+    status: "available",
+    tags: ["Vue.js", "JavaScript", "Sass"],
+  },
+
   // {
   //   title: "Grind",
   //   description: "A collection of projects showcasing my journey in mastering data structures and algorithms (DSA) and crafting engaging games.",
