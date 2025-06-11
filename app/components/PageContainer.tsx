@@ -33,7 +33,7 @@ export default function ProjectContainer({
             </a>
           </div>
         )}
-        <h1 className={titleStyle || 'text-2xl sm:text-3xl lg:text-4xl font-[deiya]'}>{title}</h1>
+        <h1 className={titleStyle || 'text-xl sm:text-3xl lg:text-4xl font-[deiya]'}>{title}</h1>
       </header>
       {children}
     </main>
