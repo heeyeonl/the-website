@@ -12,28 +12,13 @@ export default function HomepageEditor() {
   const projectImages = [
     {
       id: 1,
-      src: "/homepage-editor/homepage-editor-1.jpeg",
+      src: "/homepage-editor.png",
       alt: "Homepage Editor Screenshot 1",
     },
     {
       id: 2,
-      src: "/homepage-editor/homepage-editor-2.jpeg",
+      src: "/text-image-widget.png",
       alt: "Homepage Editor Screenshot 2",
-    },
-    {
-      id: 3,
-      src: "/homepage-editor/homepage-editor-3.jpeg",
-      alt: "Homepage Editor Screenshot 3",
-    },
-    {
-      id: 4,
-      src: "/homepage-editor/homepage-editor-4.jpeg",
-      alt: "Homepage Editor Screenshot 4",
-    },
-    {
-      id: 5,
-      src: "/homepage-editor/homepage-editor-5.jpeg",
-      alt: "Homepage Editor Screenshot 5",
     },
   ];
 
@@ -81,7 +66,7 @@ export default function HomepageEditor() {
       </section>
 
       <section className="mt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-col gap-8">
           {projectImages.map((image) => (
             <div 
               key={image.id} 
