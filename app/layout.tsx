@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Welcome to my website!",
   icons: {
     icon: [
-      { url: '/tabicon.png', sizes: 'any' }
+      { url: '/images/tabicon.png', sizes: 'any' }
     ],
   },
 };
