@@ -26,17 +26,18 @@ export default function AiChatNpmPackage() {
                 </a>
             </div>
         </section>
+
         <section className="mt-8">
-            <h2 className="text-2xl font-sansita mb-6">Key Features</h2>
-            <ul className="list-none list-inside space-y-2 text-[var(--ui-black)]">
-                <li><b>🤖 AI-Powered Responses</b> Uses OpenAI GPT-3.5 Turbo for natural, contextual replies</li>
-                <li><b>🎨 Customizable Branding</b> Easily set your own logo, title, subtitle, and brand colors</li>
-                <li><b>💬 Live Chat UI</b> Smooth interface with auto-scroll and typing support</li>
-                <li><b>🛠️ Maintenance Mode</b> Gracefully disables input and shows a banner when offline</li>
-                <li><b>📱 Responsive Design</b> Mobile-friendly, works across all screen sizes</li>
-                <li><b>🔐 Secure Architecture</b> API key remains server-side; frontend communicates via API</li>
+            <h2 className="text-2xl font-sansita mt-8 mb-4">Key Features</h2>
+            <ul className="list-disc list-inside space-y-2 text-[var(--ui-black)]">
+                <li>AI-powered responses (OpenAI GPT-3.5 Turbo)</li>
+                <li>Customizable branding</li>
+                <li>Live chat UI</li>
+                <li>Center-controlled maintenance mode</li>
+                <li>Responsive design</li>
             </ul>
         </section>
+
         <section className="mt-8">
             <Image 
                 src="/images/ai-chat.png" 

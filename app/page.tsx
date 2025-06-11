@@ -18,9 +18,9 @@ export default function Home() {
       />
       <div className="flex flex-col items-center justify-center gap-6 text-center">
         <h1 className="text-2xl lg:text-4xl xl:text-5xl font-bold font-[deiya]">Product-minded</h1>
-        <h1 className="text-2xl lg:text-4xl xl:text-5xl font-bold font-[deiya]">Web Developer</h1>
+        <h1 className="text-2xl lg:text-4xl xl:text-5xl font-bold font-[deiya]">Frontend Engineer</h1>
         <h2 className="text-md md:text-xl xl:text-3xl font-[brillant]">with a UX-first approach</h2>
-        <p className="text-base md:text-lg">Making the web a more inclusive and delightful place, one pixel and breakpoint at a time.</p>
+        <p className="text-base md:text-lg">Making the web a more inclusive and delightful place, one pixel at a time.</p>
         <Link
           href="/projects"
           className={`${theme === 'dark' ? 'bg-[var(--foreground)]' : 'bg-[var(--ui-white)]'} group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border-2 px-6 font-medium transition-all duration-100 ${theme === 'dark' ? '[box-shadow:5px_5px_rgb(255_255_255)]' : '[box-shadow:5px_5px_rgb(0_0_0)]'} active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(0_0_0)] hover:cursor-pointer`}
