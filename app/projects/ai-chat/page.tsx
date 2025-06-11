@@ -1,11 +1,16 @@
+"use client";
+
 import ProjectContainer from "@/app/components/PageContainer";
 import { Link2 } from "lucide-react";
 import Tags from "@/app/components/Tags";
 import Image from "next/image";
+import FullScreenImageModal from "@/app/components/FullScreenImageModal";
+import { useState } from "react";
 
 export default function AiChatNpmPackage() {
     const tags = ['React', 'TypeScript', 'OpenAI - GPT-3.5 Turbo', 'Node.js', 'Render'];
-    
+    const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <ProjectContainer title="AI Chat NPM" githubLink="https://github.com/heeyeonl/chat-widget-package">
         <section>
@@ -34,13 +39,16 @@ export default function AiChatNpmPackage() {
         </section>
         <section className="mt-8">
             <Image 
-                src="/ai-chat.png" 
+                src="/images/ai-chat.png" 
                 alt="AI Chat Desktop"
                 width={800}
                 height={600}
-                className="w-full h-auto"
+                className="w-full h-auto cursor-pointer"
+                onClick={() => setSelectedImage({src: "/images/ai-chat.png", alt: "AI Chat Desktop"})}
             />
         </section>
+
+        <FullScreenImageModal selectedImage={selectedImage} onClose={() => setSelectedImage(null)} />
     </ProjectContainer>
   )
 }

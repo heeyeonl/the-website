@@ -3,10 +3,14 @@
 import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import ProjectContainer from "@/app/components/PageContainer";
 import Tags from "@/app/components/Tags";
+import FullScreenImageModal from "@/app/components/FullScreenImageModal";
 
 export default function HomepageEditor() {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  
   const tags = ['Vue.js', 'JavaScript', 'Sass', 'Accessibility', 'Responsive Design', 'Design System'];
 
   const projectImages = [
@@ -21,6 +25,14 @@ export default function HomepageEditor() {
       alt: "Homepage Editor Screenshot 2",
     },
   ];
+
+  const openModal = (image: { src: string; alt: string }) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <ProjectContainer title="Homepage Editor">
@@ -66,11 +78,11 @@ export default function HomepageEditor() {
       </section>
 
       <section className="mt-8">
-        <div className="flex flex-col gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectImages.map((image) => (
             <div 
               key={image.id} 
-              className="group relative cursor-pointer"
+              className="group relative cursor-pointer hover:opacity-90 transition-opacity"
             >
               <div className="aspect-video relative overflow-hidden rounded-lg">
                 <Image
@@ -79,12 +91,15 @@ export default function HomepageEditor() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  onClick={() => openModal(image)}
                 />
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      <FullScreenImageModal selectedImage={selectedImage} onClose={closeModal} />
 
       <section className="mt-8">
         <h2 className="text-2xl font-sansita mb-6">Development Process</h2>
