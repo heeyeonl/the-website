@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hexagon, SquarePercent, Plus, LayoutList, Hourglass } from 'lucide-react';
+import { Hexagon, SquarePercent, Plus, LayoutList } from 'lucide-react';
 
 export interface GameCard {
   title: string;
