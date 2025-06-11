@@ -6,7 +6,7 @@ export interface GameCard {
   description: string;
   href: string;
   icon: React.ReactNode;
-  status: 'available' | 'coming-soon';
+  status: number;
   statusColor?: string;
   tags?: string[];
   actionLabel?: string;
@@ -17,10 +17,16 @@ export interface ToolCard {
   description: string;
   href: string;
   icon: React.ReactNode;
-  status: 'available' | 'coming-soon';
+  status: number;
   statusColor?: string;
   tags?: string[];
   actionLabel?: string;
+}
+
+export const CardStatus = {
+  available: 0,
+  comingSoon: 1,
+  inProgress: 2,
 }
 
 export const games: GameCard[] = [
@@ -29,7 +35,7 @@ export const games: GameCard[] = [
     description: "Inspired by a Korean TV show's famous game, players recall tile numbers on a hex grid to match a target sum and score points.",
     href: "/playground/hexagon",
     icon: <Hexagon size={32} />,
-    status: 'available',
+    status: CardStatus.available,
     actionLabel: 'Play Now',
   },
   {
@@ -37,7 +43,7 @@ export const games: GameCard[] = [
     description: "Play classic Tic Tac Toe, or toggle to Infinite Tic Tac Toe! Once the board's full, replace your oldest moves and keep the game going—endless strategy and chaos!",
     href: "/playground/tic-tac-toe",
     icon: <SquarePercent size={32} />,
-    status: 'available',
+    status: CardStatus.available,
     actionLabel: 'Play Now',
   },
   {
@@ -45,7 +51,7 @@ export const games: GameCard[] = [
     description: "More exciting games are in development! Stay tuned for new additions to the game collection.",
     href: "#",
     icon: <Plus size={32} />,
-    status: 'coming-soon',
+    status: CardStatus.comingSoon,
   }
 ];
 
@@ -55,22 +61,22 @@ export const tools: ToolCard[] = [
     description: "A simple to-do list app that allows you to add, edit, and delete tasks.",
     href: "/playground/to-do",
     icon: <LayoutList size={32} />,
-    status: 'coming-soon',
+    status: CardStatus.inProgress,
     actionLabel: 'Play Now',
   },
-  {
-    title: "Egg Timer",
-    description: "A simple egg timer that allows you to set the time for an egg to boil.",
-    href: "/playground/egg-timer",
-    icon: <Hourglass size={32} />,
-    status: 'coming-soon',
-    actionLabel: 'Play Now',
-  },
+  // {
+  //   title: "Egg Timer",
+  //   description: "A simple egg timer that allows you to set the time for an egg to boil.",
+  //   href: "/playground/egg-timer",
+  //   icon: <Hourglass size={32} />,
+  //   status: CardStatus.comingSoon,
+  //   actionLabel: 'Play Now',
+  // },
   {
     title: "More Tools",
     description: "More exciting tools are in development! Stay tuned for new additions to the tool collection.",
     href: "#",
     icon: <Plus size={32} />,
-    status: 'coming-soon',
+    status: CardStatus.comingSoon,
   }
 ]; 

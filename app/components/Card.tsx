@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import Tags from './Tags';
 import Image from 'next/image';
 import { useTheme } from '../context/ThemeContext';
+import { CardStatus } from '../playground/data';
 
 interface CardProps {
   title: string;
@@ -13,7 +14,7 @@ interface CardProps {
   iconColor?: string;
   tags?: string[];
   href?: string;
-  status?: 'available' | 'coming-soon';
+  status?: number;
   actionLabel?: string;
   className?: string;
   isHighlighted?: boolean;
@@ -26,13 +27,13 @@ export default function Card({
   iconColor = 'text-[var(--foreground)]',
   tags = [],
   href,
-  status = 'available',
+  status = CardStatus.available,
   actionLabel = 'Learn More',
   className = '',
   isHighlighted = false,
 }: CardProps) {
   const { theme } = useTheme();
-  const isAvailable = status === 'available';
+  const isAvailable = status === CardStatus.available;
   
   return (
     <div
@@ -70,7 +71,7 @@ export default function Card({
           </Link>
         ) : (
           <span className="absolute bottom-6 left-6 inline-block bg-[var(--ui-gray)]/80 text-[var(--ui-white)] px-4 py-2 rounded-md cursor-not-allowed">
-            Coming Soon
+            {status === CardStatus.comingSoon ? 'Coming Soon' : 'In Progress'}
           </span>
         )
       ) : null}
