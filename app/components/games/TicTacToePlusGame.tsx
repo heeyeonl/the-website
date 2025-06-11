@@ -30,14 +30,14 @@ export default function TicTacToePlusGame() {
     }
 
     setHistory(newHistory);
-    setIsXNext(isXNext);
+    setIsXNext(!isXNext);
     setWinner(null);
   };
 
   const resetGame = () => {
     setHistory([]);
     setWinner(null);
-    setIsXNext(true);
+    setIsXNext(isXNext);
   };
 
   useEffect(() => {

@@ -34,7 +34,7 @@ export const CardStatus = {
 export const games: GameCard[] = [
   {
     title: "Tic Tac Toe ∞",
-    description: "Play classic Tic Tac Toe, or toggle to Infinite Tic Tac Toe! Once the board's full, replace your oldest moves and keep the game going—endless strategy and chaos!",
+    description: "Play Infinite Tic Tac Toe! (Or toggle to classic Tic Tac Toe) Once the board's full, replace your oldest moves to keep the game going!",
     href: "/playground/tic-tac-toe",
     icon: <SquarePercent size={32} />,
     status: CardStatus.available,
