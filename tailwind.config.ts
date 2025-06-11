@@ -30,6 +30,7 @@ const config: Config = {
         'brillant': ['var(--font-brillant)', 'sans-serif'],
         'specialelite': ['var(--font-specialelite)', 'sans-serif'],
         'deiya': ['var(--font-deiya)', 'sans-serif'],
+        'welcomehome': ['var(--font-welcomehome)', 'sans-serif'],
       },
       boxShadow: {
         'custom': '0 3px 10px rgb(0 0 0 / 0.1)',

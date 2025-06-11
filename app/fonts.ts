@@ -50,3 +50,9 @@ export const deiya = localFont({
   variable: '--font-deiya',
   display: 'swap',
 })
+
+export const welcomehome = localFont({
+  src: '../public/fonts/welcome-home.otf',
+  variable: '--font-welcomehome',
+  display: 'swap',
+})

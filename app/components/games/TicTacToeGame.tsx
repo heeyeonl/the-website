@@ -1,14 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Info, RefreshCcw, X } from "lucide-react";
+import { RefreshCcw, X } from "lucide-react";
 
 export default function TicTacToeGame() {
-  const [showDescription, setShowDescription] = useState(false);
+  useState(false);
   const [board, setBoard] = useState<string[]>(Array(9).fill(""));
   const [isXNext, setIsXNext] = useState(true);
-  const [status, setStatus] = useState<string>("Turn: X");
   const [winner, setWinner] = useState<string | null>(null);
+  const [xWins, setXWins] = useState(0);
+  const [oWins, setOWins] = useState(0);
+  const [draws, setDraws] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = (i: number) => {
     if (board[i] !== "") return;
@@ -17,22 +20,25 @@ export default function TicTacToeGame() {
     setBoard(newBoard);
     setWinner(null);
     setIsXNext(!isXNext);
-    setStatus(`Turn: ${!isXNext ? "X" : "O"}`);
   };
 
   const resetGame = () => {
     setBoard(Array(9).fill(""));
     setWinner(null);
-    setIsXNext(true);
-    setStatus("Turn: X");
-  }
+    setIsXNext(isXNext);
+  };
 
   useEffect(() => {
     const checkWinner = () => {
       const lines = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-        [0, 3, 6], [1, 4, 7], [2, 5, 8], // cols
-        [0, 4, 8], [2, 4, 6], // diags
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8], // rows
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8], // cols
+        [0, 4, 8],
+        [2, 4, 6], // diags
       ];
 
       for (const line of lines) {
@@ -47,9 +53,15 @@ export default function TicTacToeGame() {
     const winner = checkWinner();
     if (winner) {
       setWinner(winner);
-      setStatus(`${winner} wins!`);
+      if (winner === "X") {
+        setXWins((x) => x + 1);
+      } else {
+        setOWins((o) => o + 1);
+      }
+      setIsModalOpen(true);
     } else if (!board.includes("")) {
-      setStatus("Draw!");
+      setDraws((d) => d + 1);
+      setIsModalOpen(true);
     }
   }, [board]);
 
@@ -58,12 +70,12 @@ export default function TicTacToeGame() {
       <button
         onClick={() => handleClick(i)}
         className={`${
-          board[i] === "X"
-            ? "text-[#4CAF50] bg-[rgba(129,199,132,0.2)]"
-            : board[i] === "O"
-            ? "text-[#FF5722] bg-[rgba(255,87,34,0.2)]"
+          board[i] === "O"
+            ? "text-green-500 bg-green-200"
+            : board[i] === "X"
+            ? "text-red-500 bg-red-200"
             : "text-[var(--accent)] bg-[var(--ui-white)]"
-        } w-full aspect-square flex items-center justify-center h-full border-2 text-4xl border-[var(--ui-light)] rounded-md cursor-pointer transition-colors`}
+        } w-full aspect-square flex items-center justify-center h-full border-none bg-gray-100 text-4xl md:text-8xl rounded-md cursor-pointer transition-colors font-[welcomehome]`}
         disabled={board[i] !== "" || !!winner}
       >
         {board[i]}
@@ -72,65 +84,49 @@ export default function TicTacToeGame() {
   };
   return (
     <div className="w-full">
-      {/* Header */}
-      <div className="flex items-center mb-6 relative">
-          <Info
-            size={28}
-            className="ml-2 p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
-            onClick={() => setShowDescription(true)}
-          />
-      </div>
-
-      {/* Description Wrapper */}
-      <div className="relative mb-9">
-        {/* Overlay to detect outside clicks */}
-        {showDescription && (
-          <div 
-            className="fixed inset-0 z-[5]" 
-            onClick={() => setShowDescription(false)}
-          ></div>
-        )}
-        
-        {/* Description */}
-        <div
-          className={`
-            ${
-              showDescription
-               ? "opacity-100 visible"
-                : "opacity-0 invisible"
-            }
-           absolute top-0 left-0 z-10 w-full md:w-2/3 max-w-xl
-            bg-[var(--ui-white)] rounded-lg shadow-md transition-all duration-300
-          `}
-          onClick={(e) => e.stopPropagation()} // Prevent clicks from reaching the overlay
-        >
-          <div className="absolute top-2 right-2">
-            <X
-              size={28}
-              className="p-1 cursor-pointer hover:text-[var(--accent)] transition-colors"
-              onClick={() => setShowDescription(false)}
-            />
-          </div>
-          <div className="p-4 pt-8">
-            <ul className="space-y-4">
-              <li>Tic Tac Toe is a classic two-player game where X and O take turns marking spaces on a 3x3 grid. The first player to place three of their marks in a horizontal, vertical, or diagonal row wins the game.</li>
-              <li>
-                <p className="mb-2">How to play:</p>
-                <ol className="list-disc pl-5 space-y-2">
-                  <li>The game is played on a 3×3 grid of squares</li>
-                  <li>Player 1 is X and Player 2 is O</li>
-                  <li>Players take turns placing their mark in an empty square</li>
-                  <li>The first player to get three marks in a row (horizontally, vertically, or diagonally) wins</li>
-                  <li>If all squares are filled and no player has three in a row, the game ends in a draw</li>
-                </ol>
-              </li>
-            </ul>
-          </div>
+      {/* Status */}
+      <div className="flex max-w-md mx-auto justify-between gap-4 m-4 text-lg md:text-2xl">
+        <div className={`flex gap-2 items-center rounded-md p-2 w-full justify-center ${isXNext ? "bg-red-200/50" : "bg-[var(--ui-gray)]/30"}`}>
+          <div className="font-[welcomehome] text-red-500">X</div>
+          <div>{xWins}</div>
+        </div>
+        <div className="flex gap-2 items-center rounded-md p-2 w-full justify-center bg-[var(--ui-gray)]/30">
+          <div>Draws</div>
+          <div>{draws}</div>
+        </div>
+        <div className={`flex gap-2 items-center rounded-md p-2 w-full justify-center ${isXNext ? "bg-[var(--ui-gray)]/30" :"bg-green-200/50"}`}>
+          <div className="font-[welcomehome] text-green-500">O</div>
+          <div>{oWins}</div>
         </div>
       </div>
 
-      {/* Status */}
-      <div className="text-center text-2xl mb-4">{status}</div>
+      {/* Modal */}
+      <div 
+        className={`fixed inset-0 bg-black/50 flex items-center justify-center z-50 ${isModalOpen ? "block" : "hidden"}`}
+        onClick={() => setIsModalOpen(false)}
+      >
+        <div 
+          className="bg-[var(--ui-white)] p-4 rounded-md relative shadow-lg w-[180px] h-[150px] flex flex-col items-center justify-center"
+          onClick={(e) => e.stopPropagation()}
+        >
+            <button 
+              className="absolute top-2 right-2 text-[var(--foreground)] hover:text-[var(--foreground-hover)] text-xl font-bold cursor-pointer"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <X size={24} />
+            </button>
+           {winner ?
+             <div className="text-lg text-[var(--ui-black)]">
+               <span className={`font-[welcomehome] text-2xl ${winner === "X" ? "text-red-500" : "text-green-500"}`}>{winner}</span> WON!
+             </div>
+             : <div className="text-lg text-[var(--ui-black)]">Draw!</div>
+           }
+          <button className="bg-[var(--foreground)] text-white p-2 rounded-md cursor-pointer mt-4 hover:bg-[var(--foreground-hover)] transition-colors" onClick={() => {
+            setIsModalOpen(false);
+            resetGame();
+          }}>Play again</button>
+        </div>
+      </div>
 
       {/* Game */}
       <div className="grid grid-cols-3 max-w-md mx-auto gap-2">
