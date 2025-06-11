@@ -4,12 +4,12 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
 
-interface ImageModalProps {
+interface FullScreenImageModalProps {
   selectedImage: { src: string; alt: string } | null;
   onClose: () => void;
 }
 
-export default function ImageModal({ selectedImage, onClose }: ImageModalProps) {
+export default function FullScreenImageModal({ selectedImage, onClose }: FullScreenImageModalProps) {
   // Close modal on escape key press
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -39,13 +39,13 @@ export default function ImageModal({ selectedImage, onClose }: ImageModalProps) 
 
   return (
     <div 
-      className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div className="relative w-full h-full flex items-center justify-center">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-100 bg-black/20 hover:bg-black/30 transition-colors rounded-full p-2 cursor-pointer"
+          className="absolute top-4 right-4 z-60 bg-white/20 hover:bg-white/30 transition-colors rounded-full p-2 cursor-pointer"
           aria-label="Close modal"
         >
           <X size={24} className="text-white" />
