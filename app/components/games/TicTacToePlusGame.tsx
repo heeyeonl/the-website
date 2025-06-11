@@ -30,7 +30,7 @@ export default function TicTacToePlusGame() {
     }
 
     setHistory(newHistory);
-    setIsXNext(!isXNext);
+    setIsXNext(isXNext);
     setWinner(null);
   };
 
