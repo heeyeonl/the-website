@@ -7,17 +7,17 @@ import ProjectContainer from "@/app/components/PageContainer";
 const FEATURED_PRODUCTS = [
   {
     title: "Cat Toys Crochet Pattern",
-    image: "/products/cat-toys-crochet-pattern.jpg",
+    image: "/images/products/cat-toys-crochet-pattern.jpg",
     href: "https://www.etsy.com/listing/1876603129/cat-toys-crochet-pattern-digital-fish?click_key=601485de8d2c7edbe352b46d3eb49b27fcf8a8c5%3A1876603129&click_sum=a221a40e&ref=items-pagination-3&sts=1",
   },
   {
     title: "Stitch Markers",
-    image: "/products/stitch-markers.jpg",
+    image: "/images/products/stitch-markers.jpg",
     href: "https://www.etsy.com/shop/HeeyeonKnits?ref=shop-header-name&listing_id=1867109221&from_page=listing&section_id=52770283",
   },
   {
     title: "Handmade Doily Coasters",
-    image: "/products/doily-coasters.jpg",
+    image: "/images/products/doily-coasters.jpg",
     href: "https://www.etsy.com/listing/1853845722/handmade-doily-crochet-coasters-set-of-2?ls=r&ref=listing-free-shipping-bundle-1&sts=1&content_source=4725f66d7f93a72615ff133d73a0c9926ef2c470%253A1853845722&logging_key=4725f66d7f93a72615ff133d73a0c9926ef2c470%3A1853845722",
   }
 ];

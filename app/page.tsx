@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-[calc(100vh-4rem)] flex flex-col width-fit sm:flex-row items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-30 gap-6">
       <Image 
-        src={theme === 'dark' ? "/web-drawing-white.png" : "/web-drawing-black.png"}
+        src={theme === 'dark' ? "/images/web-drawing-white.png" : "/images/web-drawing-black.png"}
         alt="Web Drawing" 
         width={800} 
         height={800} 

@@ -77,7 +77,7 @@ export default function Card({
 
       {isHighlighted && (
         <Image 
-          src={theme === 'dark' ? "/flower-white.png" : "/flower-black.png"} 
+          src={theme === 'dark' ? "/images/flower-white.png" : "/images/flower-black.png"} 
           alt="Flower" 
           width={80} 
           height={80} 

@@ -32,7 +32,7 @@ export default function About() {
         <div className="text-center">
           <div className="relative w-[150px] h-[150px] mx-auto md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px]">
             <Image
-              src="/profile.jpg"
+              src="/images/profile.jpg"
               alt="Heeyeon Lee"
               fill
               className="rounded-full object-cover"

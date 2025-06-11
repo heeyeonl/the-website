@@ -12,12 +12,12 @@ export default function HomepageEditor() {
   const projectImages = [
     {
       id: 1,
-      src: "/homepage-editor.png",
+      src: "/images/widget-editor.png",
       alt: "Homepage Editor Screenshot 1",
     },
     {
       id: 2,
-      src: "/text-image-widget.png",
+      src: "/images/text-image-widget.png",
       alt: "Homepage Editor Screenshot 2",
     },
   ];
