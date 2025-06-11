@@ -4,7 +4,7 @@ import { Link2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ProjectContainer from "@/app/components/PageContainer";
+import PageContainer from "@/app/components/PageContainer";
 import Tags from "@/app/components/Tags";
 import FullScreenImageModal from "@/app/components/FullScreenImageModal";
 
@@ -35,7 +35,7 @@ export default function HomepageEditor() {
   };
 
   return (
-    <ProjectContainer title="Homepage Editor">
+    <PageContainer title="Homepage Editor">
       <section>
         <Tags tags={tags} />
         <p className="text-lg text-[var(--ui-black)] mb-6">
@@ -131,6 +131,6 @@ export default function HomepageEditor() {
           </ol>
         </div>
       </section>
-    </ProjectContainer>
+    </PageContainer>
   );
 }

@@ -8,7 +8,7 @@ interface PageContainerProps {
   className?: string;
 }
 
-export default function ProjectContainer({
+export default function PageContainer({
   children,
   title,
   titleStyle,

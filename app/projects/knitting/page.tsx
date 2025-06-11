@@ -2,7 +2,7 @@
 
 import { Instagram, Store } from 'lucide-react';
 import Image from 'next/image';
-import ProjectContainer from "@/app/components/PageContainer";
+import PageContainer from "@/app/components/PageContainer";
 
 const FEATURED_PRODUCTS = [
   {
@@ -24,7 +24,7 @@ const FEATURED_PRODUCTS = [
 
 export default function EtsyStore() {
   return (
-    <ProjectContainer title="HeeyeonKnits" titleStyle="text-4xl font-[specialelite]">
+    <PageContainer title="HeeyeonKnits" titleStyle="text-4xl font-[specialelite]">
       <p>
         Welcome to my knitting corner! I create handmade knitted items with love and care.
         Follow me on Instagram to see my latest creations and works in progress.
@@ -78,6 +78,6 @@ export default function EtsyStore() {
           ))}
         </div>
       </div>
-    </ProjectContainer>
+    </PageContainer>
   );
 }

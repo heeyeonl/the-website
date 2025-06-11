@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectContainer from "@/app/components/PageContainer";
+import PageContainer from "@/app/components/PageContainer";
 import { Link2 } from "lucide-react";
 import Tags from "@/app/components/Tags";
 import Image from "next/image";
@@ -12,7 +12,7 @@ export default function AiChatNpmPackage() {
     const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
-    <ProjectContainer title="AI Chat NPM" githubLink="https://github.com/heeyeonl/chat-widget-package">
+    <PageContainer title="AI Chat NPM" githubLink="https://github.com/heeyeonl/chat-widget-package">
         <section>
             <Tags tags={tags} />
             <p>
@@ -49,6 +49,6 @@ export default function AiChatNpmPackage() {
         </section>
 
         <FullScreenImageModal selectedImage={selectedImage} onClose={() => setSelectedImage(null)} />
-    </ProjectContainer>
+    </PageContainer>
   )
 }
