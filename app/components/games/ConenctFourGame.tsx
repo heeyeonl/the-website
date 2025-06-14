@@ -76,13 +76,13 @@ const countOneDirection = (row: number, col: number, dr: number, dc: number) => 
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="max-w-[600px] mx-auto flex flex-col justify-center items-center">
       <div className="flex w-full justify-between gap-4 m-4 text-lg md:text-2xl text-center">
         <div className={`rounded-md p-2 w-full ${isXNext ? "bg-[var(--ui-gray)]/30" :  "bg-red-200/50"}`}>
           <div>🔴 {xWins}</div>
         </div>
-        <div className={`rounded-md p-2 w-full ${isXNext ? "bg-blue-200/50" : "bg-[var(--ui-gray)]/30"}`}>
-          <div>🔵 {oWins}</div>
+        <div className={`rounded-md p-2 w-full ${isXNext ? "bg-yellow-200/50" : "bg-[var(--ui-gray)]/30"}`}>
+          <div>🟡 {oWins}</div>
         </div>
       </div>
       
@@ -106,7 +106,7 @@ const countOneDirection = (row: number, col: number, dr: number, dc: number) => 
             </button>
            {winner &&
              <div className="text-lg text-[var(--ui-black)]">
-               <span className={`font-[welcomehome] text-2xl ${winner === "X" ? "text-red-500" : "text-blue-500"}`}>YOU</span> WON!
+               <span className={`font-[welcomehome] text-2xl ${winner === "X" ? "text-red-500" : "text-yellow-400"}`}>YOU</span> WON!
              </div>
            }
           <button className="bg-[var(--foreground)] text-white p-2 rounded-md cursor-pointer mt-4 hover:bg-[var(--foreground-hover)] transition-colors" onClick={() => {

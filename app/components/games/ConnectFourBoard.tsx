@@ -4,7 +4,7 @@ const ConnectFourBoard = ({ board, winner, onClickColumn }: {
     onClickColumn: (colIdx: number) => void
 }) => {
   return (
-    <div className="grid grid-cols-7 gap-2 w-full max-w-[600px] mx-auto">
+    <div className="grid grid-cols-7 gap-2 w-full max-w-[600px] mx-auto bg-blue-500 p-8 rounded-4xl">
       {[...board].reverse().map((row, rowIdx) =>
         row.map((col, colIdx) => (
           <div
@@ -13,8 +13,8 @@ const ConnectFourBoard = ({ board, winner, onClickColumn }: {
                 col === "X"
                     ? "bg-red-500"
                     : col === "O"
-                        ? "bg-blue-500"
-                        : "bg-[#ccc]"
+                        ? "bg-yellow-400"
+                        : "bg-[var(--ui-white)]"
             }`}
             onClick={() => {
                 if (winner) return;
