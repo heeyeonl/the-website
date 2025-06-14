@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hexagon, SquarePercent, Plus, Hourglass } from 'lucide-react';
+import { Hexagon, SquarePercent, Plus, Hourglass, Dice4 } from 'lucide-react';
 
 export interface GameCard {
   title: string;
@@ -42,6 +42,14 @@ export const games: GameCard[] = [
     isHighlighted: true,
   },
   {
+    title: "Connect 4",
+    description: "A classic game where two players race to connect four discs in a row—simple, quick, and super fun!",
+    icon: <Dice4 size={32} />,
+    href: "/playground/connect-4",
+    status: CardStatus.available,
+    actionLabel: 'Play Now',
+  },
+  {
     title: "Hexagon",
     description: "Inspired by a Korean TV show's famous game, players recall tile numbers on a hex grid to match a target sum and score points.",
     href: "/playground/hexagon",
@@ -68,8 +76,8 @@ export const tools: ToolCard[] = [
   //   actionLabel: 'Play Now',
   // },
   {
-    title: "Egg Timer",
-    description: "A simple egg timer that allows you to set the time for an egg to boil.",
+    title: "Pasta Timer",
+    description: "A simple pasta timer to help you cook your pasta perfectly al dente.",
     href: "/playground/egg-timer",
     icon: <Hourglass size={32} />,
     status: CardStatus.inProgress,
@@ -77,7 +85,7 @@ export const tools: ToolCard[] = [
   },
   {
     title: "More Tools",
-    description: "More exciting tools are in development! Stay tuned for new additions to the tool collection.",
+    description: "More exciting tools are coming!",
     href: "#",
     icon: <Plus size={32} />,
     status: CardStatus.comingSoon,
