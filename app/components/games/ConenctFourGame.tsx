@@ -61,8 +61,14 @@ const countOneDirection = (row: number, col: number, dr: number, dc: number) => 
                 setOWins(oWins + 1);
             }
             setIsModalOpen(true);
+        } else {
+            const isBoardFull = newBoard.every(row => row.every(cell => cell !== ""));
+            if (isBoardFull) {
+                setWinner("Draw");
+                setIsModalOpen(true);
+            }
         }
-
+        
         setCurrPlayer(currPlayer === "X" ? "O" : "X");
         break;
       }
@@ -104,7 +110,11 @@ const countOneDirection = (row: number, col: number, dr: number, dc: number) => 
             >
               <X size={24} />
             </button>
-           {winner &&
+           {winner === "Draw" ?
+             <div className="text-lg text-[var(--ui-black)]">
+               <span className={`font-[welcomehome] text-2xl text-gray-500`}>Draw!</span>
+             </div>
+           : winner &&
              <div className="text-lg text-[var(--ui-black)]">
                <span className={`font-[welcomehome] text-2xl ${winner === "X" ? "text-red-500" : "text-yellow-400"}`}>YOU</span> WON!
              </div>
