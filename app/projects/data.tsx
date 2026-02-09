@@ -15,6 +15,15 @@ export interface ProjectCard {
 
 export const projects: ProjectCard[] = [
   {
+    title: "Coinbase Social",
+    description:
+      "A social media platform for Coinbase, built with React.js and TypeScript.",
+    href: "/projects/coinbase-social",
+    icon: <Code2 size={32} />,
+    status: CardStatus.available,
+    tags: ["React.js", "TypeScript", "UX design"],
+  },
+  {
     title: "AI Chat",
     description:
       "An NPM package that allows users to easily integrate AI chat functionality into their projects.",
