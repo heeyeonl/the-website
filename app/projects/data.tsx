@@ -1,5 +1,5 @@
 import React from "react";
-import { Code2, Store, Plus } from "lucide-react";
+import { Code2, Store, Plus, Clapperboard } from "lucide-react";
 import { CardStatus } from "../playground/data";
 
 export interface ProjectCard {
@@ -15,6 +15,16 @@ export interface ProjectCard {
 
 export const projects: ProjectCard[] = [
   {
+    title: "Palette Tools",
+    description:
+      "The all-in-one platform helping filmmakers run their studio. CTO & Co-Founder, building from zero to one.",
+    href: "/projects/palette",
+    icon: <Clapperboard size={32} />,
+    status: CardStatus.available,
+    tags: ["React", "TanStack Start", "TypeScript", "InstantDB", "Mux"],
+    isHighlighted: true,
+  },
+  {
     title: "AI Chat",
     description:
       "An NPM package that allows users to easily integrate AI chat functionality into their projects.",
@@ -22,7 +32,6 @@ export const projects: ProjectCard[] = [
     icon: <Code2 size={32} />,
     status: CardStatus.available,
     tags: ["React.js", "TypeScript", "NPM", "AI"],
-    isHighlighted: true,
   },
   {
     title: "Homepage Editor",
