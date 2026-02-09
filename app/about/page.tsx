@@ -18,11 +18,14 @@ export default function About() {
         
         <div className="flex flex-col gap-6 mb-9 text-[var(--ui-black)]">
           <p>
-            I am Heeyeon Lee, a Front-end Engineer with 5 years of industry experience.
+            I am Heeyeon Lee, CTO & Co-Founder of Palette, with 6+ years of industry experience as a software engineer.
             I graduated with a Computer Science degree from Brigham Young University, Provo, Utah.
           </p>
           <p>
-            I&apos;ve always been drawn to art and visual storytelling, which naturally led me to front-end development. With 5 years of experience as a front-end engineer, I love building interfaces that feel thoughtful, intuitive, and beautiful. I specialize in transforming manual workflows into scalable, self-serviceable products that empower users and reduce operational overhead.
+            I&apos;ve always been drawn to art and visual storytelling, which naturally led me to software development. I love building products that feel thoughtful, intuitive, and beautiful—not just in the UI, but in the experience itself.
+          </p>
+          <p>
+            Currently, I&apos;m building Palette, a creative collaboration platform, from zero to one. Previously, I specialized in transforming manual workflows into scalable, self-serviceable products that empower users.
           </p>
           <p>
             Outside of work, I love spending time on creative hobbies like knitting and unwinding with games—whether competitive, strategic, or cozy.

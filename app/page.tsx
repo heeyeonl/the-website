@@ -18,7 +18,7 @@ export default function Home() {
       />
       <div className="flex flex-col items-center justify-center gap-6 text-center">
         <h1 className="text-2xl lg:text-4xl font-bold font-[deiya]">Product-minded</h1>
-        <h1 className="text-2xl lg:text-4xl font-bold font-[deiya]">Frontend Engineer</h1>
+        <h1 className="text-2xl lg:text-4xl font-bold font-[deiya]">Software Engineer</h1>
         <h2 className="text-md md:text-xl font-[brillant]">with a UX-first approach</h2>
         <p className="text-base md:text-lg">Making the web a more inclusive and delightful place, one pixel at a time.</p>
         <Link
